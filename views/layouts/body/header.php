@@ -1,0 +1,61 @@
+<nav>
+    <input type="checkbox" name="toogle" id="menu" class="toogleMenu">
+    <div class="toogleMenu">
+        <a>
+            <label for="menu">
+                <img src="/images/burger.png">
+                <img src="/images/exit.png">
+            </label>
+        </a>
+        <a href="/">
+            <img src="/images/logo.png">
+        </a>
+        <a href="tel:+7-926-123-37-01">
+            <img src="/images/phone.png">
+        </a>
+    </div>
+    <ul>
+        <li class="logo">
+            <a href="/">
+                <img src="/images/logo.png">
+            </a>
+        </li>
+        <li class="select">
+            <a href="/">главная</a>
+        </li>
+        <li class="select">
+            <input type="checkbox" name="toggle" class="toggleSubmenu" id="submenu">
+            <a href="/">о нас</a>
+            <label for="submenu" class="toggleSubmenu"></label>
+            <ul class="submenu">
+                <li>
+                    <a href="/about/history/">история команды</a>
+                </li>
+                <li>
+                    <a href="/about/tests/">настройка/тесты</a>
+                </li>
+                <li>
+                    <a href="/about/training/">подготовка KIA</a>
+                </li>
+                <li>
+                    <a href="/about/firstrace/">первая гонка</a>
+                </li>
+                <li>
+                    <a href="/about/lineup/">состав команды</a>
+                </li>
+                <li>
+                    <a href="/about/prospects/">перспективы</a>
+                </li>
+            </ul>
+        </li>
+        <li class="select">
+            <a href="/partners/">партнеры</a>
+        </li>
+        <li class="select">
+            <a href="/videos/">видео</a>
+        </li>
+        <li class="select">
+            <a href="/contacts/">контакты</a>
+        </li>
+    </ul>
+</nav>

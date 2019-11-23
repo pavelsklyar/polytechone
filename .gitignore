@@ -1,0 +1,9 @@
+# PhpStorm directory
+.idea/
+
+# MAC files
+.DS_Store
+
+# Local files
+config/config_hosting.ini
+public_html/htaccess

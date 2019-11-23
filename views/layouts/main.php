@@ -1,0 +1,40 @@
+<?php
+/**
+ * @var $page \app\base\Page;
+ */
+
+$path = new \app\base\Path();
+?>
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <?php //include $page->getMetrika(); ?>
+    <?php include $page->getMeta(); ?>
+    <?php include $page->getStyles(); ?>
+
+    <title><?= $page->getTitle(); ?></title>
+    <meta name="description" content="<?= $page->getDescription(); ?>">
+    <meta name="keywords" content="<?= $page->getKeywords(); ?>">
+</head>
+<body>
+<!--    <div class="header">-->
+        <?php include $page->getHeader(); ?>
+<!--    </div>-->
+    <div class="content">
+        <?php
+            if (!empty($page->getData()))
+                extract($page->getData());
+
+            if (!empty($page->getContent()))
+                echo $page->getContent();
+        ?>
+    </div>
+
+    <?php if ($path->getPath()[1] !== '') : ?>
+    <footer>
+        <?php include $page->getFooter(); ?>
+    </footer>
+    <?php endif; ?>
+</body>
+</html>

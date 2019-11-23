@@ -1,0 +1,223 @@
+@import "fonts.css";
+
+* {
+    color: #000;
+}
+
+body {
+    font-family: 'CenturyGothic';
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #17171f;
+    min-height: 100vh;
+}
+
+.admin-auth {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/aback.png) no-repeat center;
+    background-size: cover;
+}
+
+.admin-auth-content {
+    font-family: 'CenturyGothic-Bold';
+    font-size: 16px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 3px;
+}
+
+.admin-auth-form {
+    display: flex;
+    flex-direction: column;
+}
+.admin-auth-form .form-group {
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+.admin-auth-form .form-group label {
+    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+}
+.admin-auth-form .form-group input{
+    width: 100%;
+    color: #000;
+    font-family: 'CenturyGothic-Bold';
+    padding: 10px 10px;
+}
+.admin-auth-form > input {
+    padding: 5px 10px;
+    background-clip: border-box;
+    background-color: rgb(241, 241, 241);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px 0px inset;
+}
+
+.admin-h2 {
+    font-size: 16pt;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 0px;
+    padding: 20px 0;
+
+}
+.btn {
+    text-transform: uppercase;
+}
+.admin {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.admin-left {
+    flex: 1;
+    background-color: #333333;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.admin-logo {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.a-logo-a {
+    width: 90%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.a-logo-img {
+    height: 100%;
+}
+
+.admin-navigation {
+    font-size: 12pt;
+}
+
+.a-nav-ul {
+    padding-left: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: left;
+}
+
+.a-nav-li {
+    background-image: url('../images/admin/collapsed.png');
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-position: right center;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.a-nav-li:hover {
+    background-color: #5596e7;
+    color: #fff;
+}
+
+.a-nav-a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.a-nav-a:hover {
+    color: #fff;
+}
+
+.admin-right {
+    flex: 6;
+    background-color: #f8f8f8;
+}
+
+.admin-right-top {
+    width: 100%;
+    height: 60px;
+    background-color: #333333;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-right-content {
+    background-color: #f8f8f8;
+    padding: 15px;
+}
+
+.a-articles-table {
+    border-collapse: collapse;
+}
+
+.a-articles-td {
+    padding: 7px 10px;
+    border: 1px solid black;
+}
+
+.addblock {
+    margin: 0px 10px 15px;
+}
+
+.addform {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.addselect {
+    width: 100%;
+    margin: 5px 0px;
+    padding: 2px;
+}
+
+.addinput {
+    font-size: 11pt;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 2px 5px;
+}
+
+.addtext {
+    font-size: 11pt;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 2px 5px;
+}
+
+.addsubmit {
+    font-size: 12pt;
+    padding: 7px 10px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    border: none;
+}
+
+.addsubmit:hover {
+    background-color: #e1e1e1;
+}
+
+a:hover {
+    text-decoration: none;
+}
