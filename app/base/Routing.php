@@ -19,9 +19,9 @@ class Routing
         $this->rules = array();
     }
 
-    public  function add($method, $link, $controller, $action)
+    public  function add($method, $link, $module, $controller, $action)
     {
-        $this->rules[] = new Router($method, $link, $controller, $action);
+        $this->rules[] = new Router($method, $link, $module, $controller, $action);
     }
 
 

@@ -18,9 +18,10 @@ $path = new \app\base\Path();
     <meta name="keywords" content="<?= $page->getKeywords(); ?>">
 </head>
 <body>
-<!--    <div class="header">-->
+    <?php if ($path->getPath()[1] !== 'admin') : ?>
         <?php include $page->getHeader(); ?>
-<!--    </div>-->
+    <?php endif; ?>
+
     <div class="content">
         <?php
             if (!empty($page->getData()))
@@ -31,7 +32,7 @@ $path = new \app\base\Path();
         ?>
     </div>
 
-    <?php if ($path->getPath()[1] !== '') : ?>
+    <?php if ($path->getPath()[1] !== '' && $page->module !== 'admin') : ?>
     <footer>
         <?php include $page->getFooter(); ?>
     </footer>

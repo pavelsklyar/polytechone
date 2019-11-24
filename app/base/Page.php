@@ -8,6 +8,7 @@ class Page
 {
     private $meta;
     private $styles;
+    private $adminStyles;
 
     public $title;
     public $description;
@@ -22,30 +23,29 @@ class Page
     private $get;
     private $post;
 
+    public $session;
+
+    public $module;
+
     public function __construct()
     {
-        $this->meta = LAYOUTS . "head/meta.php";
-        $this->styles = LAYOUTS . "head/styles.php";
-        $this->header = LAYOUTS . "body/header.php";
-        $this->footer = LAYOUTS . "body/footer.php";
+        $this->meta = COMMON_LAYOUTS . "head/meta.php";
+        $this->styles = COMMON_LAYOUTS . "head/styles.php";
+        $this->adminStyles = ADMIN_LAYOUTS . 'head/styles.php';
+        $this->header = COMMON_LAYOUTS . "body/header.php";
+        $this->footer = COMMON_LAYOUTS . "body/footer.php";
 
         if (!empty($_GET))
             $this->get = Security::protectData($_GET);
         if (!empty($_POST))
             $this->post = Security::protectData($_POST);
+
+        $this->session = $_SESSION;
     }
 
     public function generate()
     {
         $generator = new Generate($this);
-    }
-
-    /**
-     * @return string
-     */
-    public function getMetrika(): string
-    {
-        return $this->metrika;
     }
 
     /**

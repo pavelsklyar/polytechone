@@ -15,7 +15,7 @@ class Generate
      */
     public function __construct($page)
     {
-        $file = LAYOUTS . "main.php";
+        $file = COMMON_LAYOUTS . "main.php";
 
         if (file_exists($file)) {
             $this->render = $file;

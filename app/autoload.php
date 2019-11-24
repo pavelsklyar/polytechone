@@ -8,6 +8,8 @@ define('CONFIG', ROOT . 'config/');
 define('APP', ROOT . 'app/');
 define('VIEWS', ROOT . 'views/');
 define('LAYOUTS', VIEWS . 'layouts/');
+define('COMMON_LAYOUTS', LAYOUTS . 'common/');
+define('ADMIN_LAYOUTS', LAYOUTS . 'admin/');
 
 require_once "App.php";
 require_once "Connector.php";

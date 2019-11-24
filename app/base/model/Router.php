@@ -8,6 +8,7 @@ class Router
 {
     /**
      * @var $link - строка с url
+     * @var $module - название модуля сайта
      * @var $controller - класс обработчика
      * @var $action - метод класса обработчика
      * @var $method - [ALL, GET, POST, PUT]
@@ -16,6 +17,7 @@ class Router
      * @var $countOfPath - количество элементов $path
      */
     private $link;
+    private $module;
     private $controller;
     private $action;
     private $method;
@@ -26,14 +28,16 @@ class Router
     /**
      * Router constructor.
      * @param $link
+     * @param $module
      * @param $controller
      * @param $action
      * @param $method
      */
-    public function __construct($method, $link, $controller, $action)
+    public function __construct($method, $link, $module, $controller, $action)
     {
         $this->method = $method;
         $this->link = $link;
+        $this->module = $module;
         $this->controller = $controller;
         $this->action = $action;
 
@@ -47,6 +51,14 @@ class Router
     public function getLink()
     {
         return $this->link;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModule()
+    {
+        return $this->module;
     }
 
     /**
