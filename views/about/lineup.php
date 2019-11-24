@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Состав команды - Polytech:ONE";
+
+?>
+
 <main class="lineup">
     <h1 class="headline">состав команды</h1>
     <div class="lineup-content">

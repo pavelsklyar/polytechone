@@ -6,25 +6,60 @@ use app\security\Security;
 
 class Page
 {
+    /**
+     *  Контент в <head></head>
+     *
+     * @var $meta - метатеги
+     * @var $styles - основные стили сайта
+     * @var $adminStyles - стили панели администраторов
+     * @var $title - заголовок страницы
+     * @var $description - описание страницы для поисковых роботов
+     * @var $keywords - ключевые слова страницы для поисковых роботов
+     */
     private $meta;
     private $styles;
     private $adminStyles;
-
     public $title;
     public $description;
     public $keywords;
 
+    /**
+     *  Части, одинаковые на всех страницах
+     *
+     * @var $header - верхняя часть сайта (меню и т.п.)
+     * @var $footer - нижняя часть сайта (футер)
+     */
     private $header;
     private $footer;
 
+    /**
+     *  Контент конкретной страницы
+     *
+     * @var $data - содержит переменные PHP, которые используются во вьюхах
+     * @var $content - содержимое вьюхи для конкретной страницы
+     */
     private $data;
     private $content;
 
+    /**
+     *  Данные из запросов
+     *
+     * @var $get - хранит параметры, переданные GET-запросом
+     * @var $post - хранит параметры, переданные POST-запросом
+     */
     private $get;
     private $post;
 
+    /**
+     * @var $session - для работы с сессией
+     */
     public $session;
 
+    /**
+     * @var $module - модуль, к которому относится страници сайта
+     * Благодаря ему можно закрыть доступ к определённым разделам сайта, например, к админ-панели.
+     * Задаётся при определении роутинга в config/routing.php
+     */
     public $module;
 
     public function __construct()
@@ -62,6 +97,14 @@ class Page
     public function getStyles()
     {
         return $this->styles;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdminStyles()
+    {
+        return $this->adminStyles;
     }
 
     /**

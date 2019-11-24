@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Подготовка KIA - Polytech:ONE";
+
+?>
+
 <main class="training">
     <h1 class="headline">Подготовка kia</h1>
 <div class="articleTr">

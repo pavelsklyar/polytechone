@@ -52,7 +52,7 @@
             <a href="/partners/">партнеры</a>
         </li>
         <li class="select">
-            <a href="/videos/">видео</a>
+            <a href="/join/">присоединиться</a>
         </li>
         <li class="select">
             <a href="/contacts/">контакты</a>

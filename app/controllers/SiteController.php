@@ -35,6 +35,11 @@ class SiteController implements Controller
         $view = new View("site/partners", $this->page);
     }
 
+    public function join()
+    {
+        $view = new View("site/join", $this->page);
+    }
+
     public function contacts()
     {
         $view = new View("site/contacts", $this->page);

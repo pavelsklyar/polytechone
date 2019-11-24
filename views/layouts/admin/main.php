@@ -9,13 +9,9 @@ $path = new \app\base\Path();
 <!doctype html>
 <html lang="ru">
 <head>
-    <?php //include $page->getMetrika(); ?>
-    <?php include $page->getMeta(); ?>
-    <?php include $page->getStyles(); ?>
+    <?php include $page->getAdminStyles(); ?>
 
     <title><?= $page->getTitle(); ?></title>
-    <meta name="description" content="<?= $page->getDescription(); ?>">
-    <meta name="keywords" content="<?= $page->getKeywords(); ?>">
 </head>
 <body>
     <?php if ($path->getPath()[1] !== 'admin') : ?>

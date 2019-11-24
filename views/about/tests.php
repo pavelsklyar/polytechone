@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Настройка и тесты - Polytech:ONE";
+
+?>
+
 <main class="tests">
     <h1 class="headline">настройка и тесты</h1>
 

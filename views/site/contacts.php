@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Контакты - Polytech:ONE";
+
+?>
+
 <main class="contact">
     <h1 class="headline">Контакты</h1>
     <div class="contact-content">

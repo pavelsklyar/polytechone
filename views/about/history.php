@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "История команды - Polytech:ONE";
+
+?>
+
 <link rel="stylesheet" href="/css/history.css">
 <div class="bckgHistImg"><img src="/images/history/smokeBckgHist.png"></div>
 <main class="history">

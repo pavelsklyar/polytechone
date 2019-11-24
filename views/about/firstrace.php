@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Первая гонка - Polytech:ONE";
+
+?>
+
 <div class="firstracesmoke"><img class="img" src="/images/firstrace/smoke.png"></div>
 <main class="firstrace">
     <h1 class="headline">первая гонка</h1>

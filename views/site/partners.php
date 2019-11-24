@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Наши партнёры - Polytech:ONE";
+
+?>
+
 <div class="partSmoke"><img class="img" src="/images/partners/partSmoke.png"></div>
 <main class="partners">
     <h1 class="headline">Партнеры</h1>
