@@ -19,3 +19,4 @@ $routing->add('GET', '/about/lineup/', 'common', AboutController::class, 'lineup
 $routing->add('GET', '/about/prospects/', 'common', AboutController::class, 'prospects');
 
 $routing->add('GET', '/admin/', 'admin', AdminController::class, 'index');
+$routing->add('POST', '/admin/auth/', 'admin', AdminController::class, 'auth');

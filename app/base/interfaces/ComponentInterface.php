@@ -4,7 +4,7 @@
 namespace app\base\interfaces;
 
 
-interface Component
+interface ComponentInterface
 {
 
 }

@@ -6,7 +6,7 @@ namespace app\base\interfaces;
 
 use app\base\Page;
 
-interface Controller
+interface ControllerInterface
 {
     /**
      * Controller constructor.

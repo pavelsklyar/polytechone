@@ -2,27 +2,19 @@
 
 namespace app\controllers;
 
-use app\base\interfaces\Controller;
+use app\base\Controller;
 use app\base\Page;
 use app\base\View;
 use app\components\VerbsComponent;
 
-class SiteController implements Controller
+class SiteController extends Controller
 {
-    private $page;
-    private $params;
     private $component;
     private $model;
 
-    /**
-     * MainController constructor.
-     * @param $page Page
-     * @param $params array
-     */
     public function __construct(Page &$page, $params)
     {
-        $this->page = $page;
-        $this->params = $params;
+        parent::__construct($page, $params);
     }
 
     public function index()

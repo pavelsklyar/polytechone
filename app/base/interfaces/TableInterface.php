@@ -4,7 +4,7 @@
 namespace base\interfaces;
 
 
-interface Table
+interface TableInterface
 {
     /**
      * @param $object // Any class which implements Model

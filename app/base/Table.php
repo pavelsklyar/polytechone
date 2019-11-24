@@ -1,29 +1,28 @@
 <?php
 
 
-namespace app\database\tables;
+namespace app\base;
 
-
-use app\model\Verb;
-use base\interfaces\Table;
+use base\interfaces\TableInterface;
 use Database;
-use Requests;
 
-class VerbsTable implements Table
+class Table implements TableInterface
 {
-    private $tableName = "verbs";
+    public $tableName;
     private $database;
 
     /**
-     * VerbsTable constructor.
+     * Table constructor.
+     * @param $tableName
      */
     public function __construct()
     {
         $this->database = new Database();
     }
 
+
     /**
-     * @param Verb $object
+     * @param $object // Any class which implements Model
      * @return bool
      */
     public function insert($object): bool
@@ -32,7 +31,7 @@ class VerbsTable implements Table
     }
 
     /**
-     * @param Verb $object
+     * @param $object // Any class which implements Model
      * @param string $condition // Name of condition
      * @param string|number $conditionValue // Value of condition
      * @return bool
@@ -65,12 +64,7 @@ class VerbsTable implements Table
      */
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
-    }
-
-    public function getAllVerbForms()
-    {
-        $sql = "SELECT `first_form`, `second_form`, `third_form`, `translate`, `transcription` FROM `{$this->tableName}` GROUP BY `first_form`";
+        $sql = "SELECT * FROM `{$this->tableName}`";
 
         return $this->database->getQueryArray($sql);
     }
@@ -82,18 +76,7 @@ class VerbsTable implements Table
      */
     public function getByCondition($condition, $conditionValue): array
     {
-        $sql = Requests::getByCondition($this->tableName, $condition, $conditionValue);
-
-        return $this->database->getQueryArray($sql);
-    }
-
-    /**
-     * @param array $conditions
-     * @return array|null
-     */
-    public function getBySeveralConditions($conditions)
-    {
-        $sql = Requests::getBySeveralConditions($this->tableName, $conditions);
+        $sql = "SELECT * FROM `{$this->tableName}` WHERE `$condition` = '$conditionValue'";
 
         return $this->database->getQueryArray($sql);
     }

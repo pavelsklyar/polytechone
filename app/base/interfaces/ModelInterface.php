@@ -4,7 +4,7 @@
 namespace base\interfaces;
 
 
-interface Model
+interface ModelInterface
 {
 
 }
