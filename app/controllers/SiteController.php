@@ -5,7 +5,6 @@ namespace app\controllers;
 use app\base\Controller;
 use app\base\Page;
 use app\base\View;
-use app\components\VerbsComponent;
 
 class SiteController extends Controller
 {
