@@ -100,7 +100,7 @@ var_dump($form);
 <script>
     $(function($){
         //Использование параметра completed
-        $("#phone").mask("8 (999) 999-99-99", {
+        $("#phone").mask("+7 (999) 999-99-99", {
             completed: function(){ alert("Вы ввели номер: " + this.val()); }
         });
     });
