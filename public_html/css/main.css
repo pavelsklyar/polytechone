@@ -1957,13 +1957,23 @@ body{
     flex-wrap: wrap;
 }
 
+.join-form__selectButton {
+    width: 100%;
+}
+
 .join-form__selectButton .join-form__submit {
     width: 49%;
 }
 
+.join-form__select {
+    width: 60%;
+    display: flex;
+    margin: auto;
+}
+
 .join-form__form {
-    width: 50%;
-    margin: 50px auto;
+    width: 60%;
+    margin: 0 auto 50px;
 }
 
 .join-form__main {
@@ -1971,7 +1981,7 @@ body{
     padding-bottom: 20px;
     position: relative;
     font-weight: 500;
-    margin-bottom: 7px;
+    margin: 7px 0;
 }
 
 .join-form__line {
@@ -2033,6 +2043,10 @@ body{
 .join-form__selectButton {
     display: flex;
     justify-content: space-between;
+}
+
+#team {
+    display: none;
 }
 
 
