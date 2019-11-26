@@ -7,3 +7,4 @@
 # Local files
 config/config_hosting.ini
 public_html/htaccess
+Vagrantfile
