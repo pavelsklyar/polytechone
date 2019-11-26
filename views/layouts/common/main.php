@@ -12,7 +12,7 @@ $path = new \app\base\Path();
     <?php include $page->getScripts(); ?>
     <?php include $page->getMeta(); ?>
     <?php include $page->getStyles(); ?>
-
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <title><?= $page->getTitle(); ?></title>
     <meta name="description" content="<?= $page->getDescription(); ?>">
     <meta name="keywords" content="<?= $page->getKeywords(); ?>">
