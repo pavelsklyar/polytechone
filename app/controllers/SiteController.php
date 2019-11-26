@@ -36,10 +36,14 @@ class SiteController extends Controller
 
     public function joinTeam()
     {
+        $get = $this->page->getGet();
         $post = $this->page->getPost();
 
         $form = new TeamForm($post['name'], $post['surname'], $post['email'], $post['phone']);
-        var_dump($form);
+        if (isset($form->status)) {
+            $view = new View("site/join", $this->page, ['form' => 'team', 'error' => $form->status['error'], 'data' => $post]);
+            return;
+        }
     }
 
     public function joinPartner()

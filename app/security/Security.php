@@ -4,8 +4,8 @@ namespace app\security;
 
 class Security
 {
-    private static $emailRegExp = ".+@.+\..+";
-    private static $phoneRegExp = "^(8|\+7|7)([ |\-]?)(\(|)([0-9]+)(\)|)([ |\-]?)([0-9]+)( |-|)([0-9]+)( |-|)([0-9]+)$";
+    private static $emailRegExp = "/.+@.+\..+/";
+    private static $phoneRegExp = "/^(8|\+7|7)([ |\-]?)(\(|)([0-9]+)(\)|)([ |\-]?)([0-9]+)( |-|)([0-9]+)( |-|)([0-9]+)$/";
 
     /**
      * @return string
