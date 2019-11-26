@@ -13,7 +13,7 @@ class Model implements ModelInterface
         $rules = $this->rules();
 
         foreach ($rules as $field => $rule) {
-
+//            $this->$field
         }
     }
 

@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav">
     <input type="checkbox" name="toogle" id="menu" class="toogleMenu">
     <div class="toogleMenu">
         <a>
@@ -14,16 +14,16 @@
             <img src="/images/phone.png">
         </a>
     </div>
-    <ul>
-        <li class="logo">
+    <ul class="menu">
+        <li class="menu__item menu__logo">
             <a href="/">
                 <img src="/images/logo.png">
             </a>
         </li>
-        <li class="select">
+        <li class="menu__item">
             <a href="/">главная</a>
         </li>
-        <li class="select">
+        <li class="menu__item">
             <input type="checkbox" name="toggle" class="toggleSubmenu" id="submenu">
             <a href="/">о нас</a>
             <label for="submenu" class="toggleSubmenu"></label>
@@ -48,13 +48,13 @@
                 </li>
             </ul>
         </li>
-        <li class="select">
+        <li class="menu__item">
             <a href="/partners/">партнеры</a>
         </li>
-        <li class="select">
+        <li class="menu__item">
             <a href="/join/">присоединиться</a>
         </li>
-        <li class="select">
+        <li class="menu__item menu__item-select">
             <a href="/contacts/">контакты</a>
         </li>
     </ul>
