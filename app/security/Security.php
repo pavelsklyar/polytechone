@@ -4,6 +4,25 @@ namespace app\security;
 
 class Security
 {
+    private static $emailRegExp = ".+@.+\..+";
+    private static $phoneRegExp = "^(8|\+7|7)([ |\-]?)(\(|)([0-9]+)(\)|)([ |\-]?)([0-9]+)( |-|)([0-9]+)( |-|)([0-9]+)$";
+
+    /**
+     * @return string
+     */
+    public static function getEmailRegExp()
+    {
+        return self::$emailRegExp;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getPhoneRegExp()
+    {
+        return self::$phoneRegExp;
+    }
+
     public static function protectData($data)
     {
         $protectData = array();

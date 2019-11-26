@@ -2,9 +2,12 @@
 
 /**
  * @var $page \app\base\Page;
+ * @var $form - параметр, указывающий, какую форму отобразить
  */
 
 $page->title = "Присоединитесь к нам - Polytech:ONE";
+
+var_dump($form);
 
 ?>
 
@@ -14,17 +17,19 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
 
 
     <div class="join-form">
-        <form action="" class=join-form__select>
+        <form action="/join/" class=join-form__select>
             <div class="join-form__selectButton">
                 <div class="join-form__submit">
-                    <button type="submit" value="team">ЧЕЛОВЕК</button>
+                    <button type="submit" name="form" value="team">ЧЕЛОВЕК</button>
                 </div>
                 <div class="join-form__submit">
-                    <button type="submit" value="partner">КОМПАНИЯ</button>
+                    <button type="submit" name="form" value="partner">КОМПАНИЯ</button>
                 </div>
             </div>
         </form>
-        <form action="/join/team" class="join-form__form" id="team">
+
+        <?php if (!isset($form) || $form == "team") : ?>
+        <form action="/join/team/" class="join-form__form" id="team">
 
             <div class="join-form__main">
 
@@ -40,7 +45,7 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
 
                 <p class="join-form__line">
                     <label for="phone">Телефон</label>
-                    <input type="text" name="name" id="phone"><span></span>
+                    <input type="text" name="name" id="phone" placeholder="+7 (999) 999-99-99"><span></span>
                 </p>
 
                 <p class="join-form__line">
@@ -53,7 +58,8 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
                 <button type="submit">ОТПРАВИТЬ</button>
             </div>
         </form>
-        <form action="/join/partner" class="join-form__form" id="partner">
+        <?php elseif ($form == "partner") : ?>
+        <form action="/join/partner/" class="join-form__form" id="partner">
 
             <div class="join-form__main">
 
@@ -74,7 +80,7 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
 
                 <p class="join-form__line">
                     <label for="phone">Телефон</label>
-                    <input type="text" name="name" id="phone"><span></span>
+                    <input type="text" name="name" id="phone" placeholder="+7 (999) 999-99-99"><span></span>
                 </p>
 
                 <p class="join-form__line">
@@ -87,5 +93,15 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
                 <button type="submit">ОТПРАВИТЬ</button>
             </div>
         </form>
+        <?php endif; ?>
     </div>
 </main>
+
+<script>
+    $(function($){
+        //Использование параметра completed
+        $("#phone").mask("8 (999) 999-99-99", {
+            completed: function(){ alert("Вы ввели номер: " + this.val()); }
+        });
+    });
+</script>

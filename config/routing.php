@@ -8,8 +8,11 @@ $routing = new \base\Routing();
 
 $routing->add('GET', '/', 'common',SiteController::class, 'index');
 $routing->add('GET', '/partners/', 'common', SiteController::class, 'partners');
-$routing->add('GET', '/join/', 'common', SiteController::class, 'join');
 $routing->add('GET', '/contacts/', 'common', SiteController::class, 'contacts');
+
+$routing->add('GET', '/join/', 'common', SiteController::class, 'join');
+$routing->add('POST', '/join/team/', 'common', SiteController::class, 'joinTeam');
+$routing->add('POST', '/join/partner/', 'common', SiteController::class, 'joinPartner');
 
 $routing->add('GET', '/about/history/', 'common', AboutController::class, 'history');
 $routing->add('GET', '/about/tests/', 'common', AboutController::class, 'tests');

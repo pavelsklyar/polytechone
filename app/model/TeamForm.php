@@ -5,8 +5,9 @@ namespace app\model;
 
 
 use app\base\Model;
+use Couchbase\Exception;
 
-class TeamRequest extends Model
+class TeamForm extends Model
 {
     public $name;
     public $surname;
@@ -22,12 +23,15 @@ class TeamRequest extends Model
      */
     public function __construct($name, $surname, $email, $phone)
     {
-
-
         $this->name = $name;
         $this->surname = $surname;
         $this->email = $email;
         $this->phone = $phone;
+
+        $validate = $this->validate();
+        if (!$validate['status']) {
+            return null;
+        }
     }
 
     public function rules()

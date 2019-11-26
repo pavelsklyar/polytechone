@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\base\Controller;
 use app\base\Page;
 use app\base\View;
+use app\model\TeamForm;
 
 class SiteController extends Controller
 {
@@ -28,7 +29,22 @@ class SiteController extends Controller
 
     public function join()
     {
-        $view = new View("site/join", $this->page);
+        $get = $this->page->getGet();
+
+        $view = new View("site/join", $this->page, ['form' => $get['form']]);
+    }
+
+    public function joinTeam()
+    {
+        $post = $this->page->getPost();
+
+        $form = new TeamForm($post['name'], $post['surname'], $post['email'], $post['phone']);
+        var_dump($form);
+    }
+
+    public function joinPartner()
+    {
+        $post = $this->page->getPost();
     }
 
     public function contacts()
