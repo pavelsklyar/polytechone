@@ -11,6 +11,7 @@ class Page
      *
      * @var $meta - метатеги
      * @var $styles - основные стили сайта
+     * @var $scripts - скрипты, которые нужно использовать на сайте
      * @var $adminStyles - стили панели администраторов
      * @var $title - заголовок страницы
      * @var $description - описание страницы для поисковых роботов
@@ -18,6 +19,7 @@ class Page
      */
     private $meta;
     private $styles;
+    private $scripts;
     private $adminStyles;
     public $title;
     public $description;
@@ -66,6 +68,7 @@ class Page
     {
         $this->meta = COMMON_LAYOUTS . "head/meta.php";
         $this->styles = COMMON_LAYOUTS . "head/styles.php";
+        $this->scripts = COMMON_LAYOUTS . "head/scripts.php";
         $this->adminStyles = ADMIN_LAYOUTS . 'head/styles.php';
         $this->header = COMMON_LAYOUTS . "body/header.php";
         $this->footer = COMMON_LAYOUTS . "body/footer.php";
@@ -97,6 +100,14 @@ class Page
     public function getStyles()
     {
         return $this->styles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScripts()
+    {
+        return $this->scripts;
     }
 
     /**

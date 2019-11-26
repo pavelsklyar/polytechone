@@ -9,7 +9,7 @@ $path = new \app\base\Path();
 <!doctype html>
 <html lang="ru">
 <head>
-    <?php //include $page->getMetrika(); ?>
+    <?php include $page->getScripts(); ?>
     <?php include $page->getMeta(); ?>
     <?php include $page->getStyles(); ?>
 
