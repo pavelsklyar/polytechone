@@ -96,7 +96,7 @@ nav > ul {
     align-items: center;
     text-align: center;
     max-height: 80px;
-    max-width: 1170px;
+    max-width: 1140px;
     width: 90%;
 }
 nav ul li {
@@ -361,6 +361,9 @@ footer img {
 
 /* ----- PROSPECTS ----- */
 
+.content{
+    display: contents;
+}
 .prospects {
     background: url(../images/prospects/prospects.png) top left no-repeat scroll;
 }
@@ -652,6 +655,7 @@ html, head, body, .container{
     min-height: 100%;
     position: absolute;
     text-align: justify;
+    left: 0;
 }
 .social_bar{
     margin-top: 85px;
@@ -760,7 +764,7 @@ html, head, body, .container{
 .main-1{
     display: flex;
     background: url(../images/tests/Plashka.png) no-repeat center;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -1455,7 +1459,7 @@ body{
 .p2Text1{
     background: url(../images/history/p2Text1BackImg.png) no-repeat;
 }
-.part2{
+.history .part2{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
