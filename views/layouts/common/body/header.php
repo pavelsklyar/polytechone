@@ -20,10 +20,10 @@
                 <img src="/images/logo.png">
             </a>
         </li>
-        <li class="menu__item">
+        <li class="menu__item <?php if ($path->getPath()[1] === "") : ?>menu__item-select<?php endif; ?>">
             <a href="/">главная</a>
         </li>
-        <li class="menu__item">
+        <li class="menu__item <?php if ($path->getPath()[1] === "about") : ?>menu__item-select<?php endif; ?>">
             <input type="checkbox" name="toggle" class="toggleSubmenu" id="submenu">
             <a href="/">о нас</a>
             <label for="submenu" class="toggleSubmenu"></label>
@@ -48,13 +48,13 @@
                 </li>
             </ul>
         </li>
-        <li class="menu__item">
+        <li class="menu__item <?php if ($path->getPath()[1] === "partners") : ?>menu__item-select<?php endif; ?>">
             <a href="/partners/">партнеры</a>
         </li>
-        <li class="menu__item">
+        <li class="menu__item <?php if ($path->getPath()[1] === "join") : ?>menu__item-select<?php endif; ?>">
             <a href="/join/">присоединиться</a>
         </li>
-        <li class="menu__item menu__item-select">
+        <li class="menu__item <?php if ($path->getPath()[1] === "contacts") : ?>menu__item-select<?php endif; ?>">
             <a href="/contacts/">контакты</a>
         </li>
     </ul>

@@ -26,7 +26,6 @@ class SiteController extends Controller
 
     public function partners()
     {
-        var_dump("hello");
         $view = new View("site/partners", $this->page);
     }
 
