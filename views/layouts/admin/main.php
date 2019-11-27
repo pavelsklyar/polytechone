@@ -10,15 +10,16 @@ $path = new \app\base\Path();
 <html lang="ru">
 <head>
     <?php include $page->getAdminStyles(); ?>
+    <?php include $page->getStyles(); ?>
 
     <title><?= $page->getTitle(); ?></title>
 </head>
 <body>
-    <?php if ($path->getPath()[1] !== 'admin') : ?>
-        <?php include $page->getHeader(); ?>
-    <?php endif; ?>
+    <div class="admin_menu">
+        <?php include $page->getAdminMenu(); ?>
+    </div>
 
-    <div class="content">
+    <div class="admin_content">
         <?php
             if (!empty($page->getData()))
                 extract($page->getData());
@@ -27,11 +28,5 @@ $path = new \app\base\Path();
                 echo $page->getContent();
         ?>
     </div>
-
-    <?php if ($path->getPath()[1] !== '' && $page->module !== 'admin') : ?>
-    <footer>
-        <?php include $page->getFooter(); ?>
-    </footer>
-    <?php endif; ?>
 </body>
 </html>

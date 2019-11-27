@@ -138,6 +138,14 @@ class Page
     }
 
     /**
+     * @return string
+     */
+    public function getAdminMenu()
+    {
+        return $this->adminMenu;
+    }
+
+    /**
      * @return mixed
      */
     public function getTitle()
