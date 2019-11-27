@@ -54,7 +54,7 @@ class App
 
                     $controller->$action();
 
-                    continue;
+                    break;
                 }
 
                 // проверяем количество элементов массива пути

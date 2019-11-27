@@ -27,7 +27,43 @@ class Table implements TableInterface
      */
     public function insert($object): bool
     {
-        // TODO: Implement insert() method.
+        $vars = get_object_vars($object);
+
+        $flag = 0;
+        $tableFields = "";
+        foreach ($vars as $key => $var) {
+            if ($key == 'status') {
+                continue;
+            }
+            if ($flag) {
+                $tableFields .= ", `{$key}`";
+            }
+            else {
+                $tableFields .= "`{$key}`";
+                $flag = 1;
+            }
+        }
+
+        $flag = 0;
+        $tableValues = "";
+        foreach ($vars as $key => $var) {
+            if ($key == 'status') {
+                continue;
+            }
+            if ($flag) {
+                $tableValues .= ", '{$var}'";
+            }
+            else {
+                $tableValues .= "'{$var}'";
+                $flag = 1;
+            }
+        }
+
+        $sql = "
+            INSERT INTO `{$this->tableName}` ({$tableFields}) VALUES ({$tableValues})
+        ";
+
+        return $this->database->query($sql);
     }
 
     /**

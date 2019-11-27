@@ -5,6 +5,8 @@ namespace app\controllers;
 use app\base\Controller;
 use app\base\Page;
 use app\base\View;
+use app\components\FormsComponent;
+use app\model\SponsorshipForm;
 use app\model\TeamForm;
 
 class SiteController extends Controller
@@ -24,6 +26,7 @@ class SiteController extends Controller
 
     public function partners()
     {
+        var_dump("hello");
         $view = new View("site/partners", $this->page);
     }
 
@@ -36,6 +39,8 @@ class SiteController extends Controller
 
     public function joinTeam()
     {
+        $this->component = new FormsComponent();
+
         $get = $this->page->getGet();
         $post = $this->page->getPost();
 
@@ -44,11 +49,33 @@ class SiteController extends Controller
             $view = new View("site/join", $this->page, ['form' => 'team', 'error' => $form->status['error'], 'data' => $post]);
             return;
         }
+
+        if ($this->component->joinTeam($form)) {
+            $view = new View("site/join_success", $this->page);
+        }
+        else {
+            $view = new View("errors/join", $this->page);
+        }
     }
 
     public function joinPartner()
     {
+        $this->component = new FormsComponent();
+
+        $get = $this->page->getGet();
         $post = $this->page->getPost();
+
+        $form = new SponsorshipForm($post['name'], $post['surname'], $post['company'], $post['email'], $post['phone']);
+        if (isset($form->status)) {
+            $view = new View("site/join", $this->page, ['form' => 'partner', 'error' => $form->status['error'], 'data' => $post]);
+            return;
+        }
+
+        if ($this->component->joinSponsorship($form)) {
+            $view = new View("site/join_success", $this->page);}
+        else {
+            $view = new View("errors/join", $this->page);
+        }
     }
 
     public function contacts()
