@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var $page \app\base\Page;
  */
@@ -8,6 +9,7 @@ $path = new \app\base\Path();
 
 <!doctype html>
 <html lang="ru">
+
 <head>
     <?php include $page->getScripts(); ?>
     <?php include $page->getMeta(); ?>
@@ -17,25 +19,29 @@ $path = new \app\base\Path();
     <meta name="description" content="<?= $page->getDescription(); ?>">
     <meta name="keywords" content="<?= $page->getKeywords(); ?>">
 </head>
-<body>
-    <?php if ($path->getPath()[1] !== 'admin') : ?>
-        <?php include $page->getHeader(); ?>
-    <?php endif; ?>
 
-    <div class="content">
-        <?php
+<body>
+    <div class="body">
+        <?php if ($path->getPath()[1] !== 'admin') : ?>
+            <?php include $page->getHeader(); ?>
+        <?php endif; ?>
+
+        <div class="content">
+            <?php
             if (!empty($page->getData()))
                 extract($page->getData());
 
             if (!empty($page->getContent()))
                 echo $page->getContent();
-        ?>
-    </div>
+            ?>
+        </div>
 
-    <?php if ($path->getPath()[1] !== '' && $page->module !== 'admin') : ?>
-    <footer>
-        <?php include $page->getFooter(); ?>
-    </footer>
-    <?php endif; ?>
+        <?php if ($path->getPath()[1] !== '' && $page->module !== 'admin') : ?>
+            <footer>
+                <?php include $page->getFooter(); ?>
+            </footer>
+        <?php endif; ?>
+    </div>
 </body>
+
 </html>
