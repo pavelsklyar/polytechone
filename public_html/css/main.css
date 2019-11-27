@@ -42,6 +42,12 @@ a {
 }
 
 body {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.body {
     font-family: 'CenturyGothic';
     margin: auto;
     display: flex;
@@ -49,7 +55,10 @@ body {
     align-items: center;
     background-color: #17171f;
     min-height: 100vh;
+    width: 100%;
 }
+
+.body {}
 
 main {
     max-width: 1140px;
