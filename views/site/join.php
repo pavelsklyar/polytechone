@@ -75,7 +75,7 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
 
                 <p class="join-form__line">
                     <label for="second_name">Компания</label>
-                    <input type="text" name="company" id="company" required pattern="[А-Я][а-я]+" placeholder="Motul"><span></span>
+                    <input type="text" name="company" id="company" required pattern="[А-Я][а-я]+{2}" placeholder="Motul"><span></span>
                 </p>
 
                 <p class="join-form__line">

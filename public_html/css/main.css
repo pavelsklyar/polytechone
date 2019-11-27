@@ -1952,9 +1952,15 @@ body{
 
 /* ----- JOIN ----- */
 
+.join {
+    display: flex;
+    align-items: center;
+}
+
 .join-form {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .join-form__selectButton {
@@ -2043,6 +2049,12 @@ body{
 .join-form__selectButton {
     display: flex;
     justify-content: space-between;
+}
+
+.join-form__success {
+    border: 2px solid white;
+    width: 50%;
+    text-align: center;
 }
 
 
