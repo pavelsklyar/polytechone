@@ -28,22 +28,22 @@
             <a href="/">о нас</a>
             <label for="submenu" class="toggleSubmenu"></label>
             <ul class="submenu">
-                <li>
+                <li class="menu__item">
                     <a href="/about/history/">история команды</a>
                 </li>
-                <li>
+                <li class="menu__item">
                     <a href="/about/tests/">настройка/тесты</a>
                 </li>
-                <li>
+                <li class="menu__item">
                     <a href="/about/training/">подготовка KIA</a>
                 </li>
-                <li>
+                <li class="menu__item">
                     <a href="/about/firstrace/">первая гонка</a>
                 </li>
-                <li>
+                <li class="menu__item">
                     <a href="/about/lineup/">состав команды</a>
                 </li>
-                <li>
+                <li class="menu__item">
                     <a href="/about/prospects/">перспективы</a>
                 </li>
             </ul>
