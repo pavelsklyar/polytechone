@@ -78,7 +78,7 @@ class Page
         if (!empty($_POST))
             $this->post = Security::protectData($_POST);
 
-        $this->session = $_SESSION;
+        $this->session = &$_SESSION;
     }
 
     public function generate()

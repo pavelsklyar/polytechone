@@ -3,17 +3,42 @@
 namespace app\components;
 
 use app\base\Component;
+use app\database\tables\AdminsTable;
+use app\model\Admin;
 
 class AuthComponent extends Component
 {
-    public function auth($login, $password)
+    private $table;
+
+    public function auth($email, $password)
     {
-        $salt = $this->generateSalt();
+        if (!isset($this->table)) {
+            $this->table = new AdminsTable();
+        }
+
+        $admin = $this->table->getByCondition('email', $email);
+        if (isset($admin)) {
+            $admin = $admin[0];
+            if ($this->checkPassword($password, $admin['password'], $admin['salt'])) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     }
 
-    public function reg($login, $password, $name, $surname)
+    public function reg($email, $password, $name, $surname)
     {
+        $salt = $this->generateSalt();
+        $passwordHash = $this->generateHashPassword($password, $salt);
 
+        $admin = new Admin($email, $passwordHash, $salt, $name, $surname);
+        if (!isset($this->table)) {
+            $this->table = new AdminsTable();
+        }
+
+        return $this->table->insert($admin);
     }
 
     private function generateSalt()
@@ -24,5 +49,20 @@ class AuthComponent extends Component
             $salt .= chr(mt_rand(33,126));
         }
         return $salt;
+    }
+
+    private function generateHashPassword($password, $salt)
+    {
+        $password512 = hash('sha512', $password);
+        $salt512 = hash('sha512', $salt);
+
+        return hash('sha512', $password512 . $salt512);
+    }
+
+    private function checkPassword($password, $dbpasswod, $dbsalt)
+    {
+        $checkPassword = $this->generateHashPassword($password, $dbsalt);
+
+        return $checkPassword === $dbpasswod;
     }
 }

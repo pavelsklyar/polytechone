@@ -15,8 +15,9 @@ class AdminController extends Controller
 
     public function beforeAction()
     {
-        if (!isset($this->page->session['auth']))
-            header("Location: /admin/");
+        if (!isset($this->page->session['auth'])) {
+            $view = new View("admin/auth", $this->page);
+        }
     }
 
     public function __construct(Page &$page, $params)
@@ -26,6 +27,8 @@ class AdminController extends Controller
 
     public function index()
     {
+        var_dump($this->page->session);
+
         if (isset($this->page->session['auth'])) {
             $view = new View("admin/index", $this->page);
         }
@@ -36,11 +39,14 @@ class AdminController extends Controller
 
     public function auth()
     {
-        $login = $this->page->getPost()['login'];
+        $email = $this->page->getPost()['email'];
         $password = $this->page->getPost()['password'];
 
-        var_dump($login, $password);
-
         $this->component = new AuthComponent();
+        if ($this->component->auth($email, $password)) {
+            $this->page->session['auth'] = true;
+        }
+
+        header("Location: /admin/");
     }
 }
