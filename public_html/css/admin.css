@@ -1,17 +1,6 @@
 @import "fonts.css";
-
 * {
     color: #000;
-}
-
-body {
-    font-family: 'CenturyGothic';
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #17171f;
-    min-height: 100vh;
 }
 
 .admin-auth {
@@ -22,6 +11,116 @@ body {
     align-items: center;
     background: url(../images/aback.png) no-repeat center;
     background-size: cover;
+}
+
+.admin_menu {
+    display: flex;
+    width: 20%;
+}
+
+.admin_content {
+    width: 80%;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    display: flex;
+    justify-content: center;
+}
+
+.admin__nav {
+    display: flex;
+    width: 100%;
+    background-color: rgba(23, 23, 31, 0.7);
+    z-index: 10;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.menu__admin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.admin__item {
+    line-height: 50px;
+    position: relative;
+    border-bottom: 2px solid white;
+}
+
+.menu__logo {
+    display: flex;
+}
+
+.menu__logo a {
+    display: flex;
+}
+
+.admin__item-select {
+    border-bottom: solid #fff 2px;
+}
+
+.admin__item:hover {
+    background: url(../images/hover-menu.png);
+    background-size: cover;
+    background-color: #17171f;
+}
+
+.menu__logo:hover {
+    background: none;
+}
+
+.menu__item:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.submenu {
+    visibility: hidden;
+    background-color: #17171f;
+    opacity: 0;
+    display: block;
+    left: 0;
+    z-index: 10;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.submenu li {
+    width: 100%;
+    line-height: 40px;
+}
+
+.spoiler {
+    margin: 30px 0;
+}
+
+.toogleMenu {
+    display: none;
+}
+
+nav li ul {
+    position: absolute;
+    display: none;
+    width: 100%;
+}
+
+nav [type="checkbox"],
+nav label.toggleSubmenu {
+    display: none;
+    width: 100%;
+}
+
+.menu__admin {
+    display: flex;
+    width: 100%;
+}
+
+.admin__item {
+    width: 100%;
 }
 
 .admin-auth-content {
@@ -35,23 +134,26 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .admin-auth-form .form-group {
-    
     display: flex;
     flex-wrap: wrap;
 }
+
 .admin-auth-form .form-group label {
     width: 100%;
     color: #fff;
     padding: 10px 0;
 }
-.admin-auth-form .form-group input{
+
+.admin-auth-form .form-group input {
     width: 100%;
     color: #000;
     font-family: 'CenturyGothic-Bold';
     padding: 10px 10px;
 }
-.admin-auth-form > input {
+
+.admin-auth-form>input {
     padding: 5px 10px;
     background-clip: border-box;
     background-color: rgb(241, 241, 241);
@@ -68,11 +170,12 @@ body {
     justify-content: flex-end;
     margin-bottom: 0px;
     padding: 20px 0;
-
 }
+
 .btn {
     text-transform: uppercase;
 }
+
 .admin {
     width: 100%;
     display: flex;

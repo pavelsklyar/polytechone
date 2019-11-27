@@ -28,7 +28,7 @@ class AdminController extends Controller
     public function index()
     {
         if (isset($this->page->session['auth'])) {
-            $view = new View("admin/index", $this->page);
+            $view = new View("about/lineup", $this->page);
         }
         else {
             $view = new View("admin/auth", $this->page);
