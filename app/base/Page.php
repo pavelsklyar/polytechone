@@ -30,9 +30,11 @@ class Page
      *
      * @var $header - верхняя часть сайта (меню и т.п.)
      * @var $footer - нижняя часть сайта (футер)
+     * @var $adminMenu - меню в панели администраторов
      */
     private $header;
     private $footer;
+    private $adminMenu;
 
     /**
      *  Контент конкретной страницы
@@ -72,6 +74,7 @@ class Page
         $this->adminStyles = ADMIN_LAYOUTS . 'head/styles.php';
         $this->header = COMMON_LAYOUTS . "body/header.php";
         $this->footer = COMMON_LAYOUTS . "body/footer.php";
+        $this->adminMenu = ADMIN_LAYOUTS . "body/menu.php";
 
         if (!empty($_GET))
             $this->get = Security::protectData($_GET);
