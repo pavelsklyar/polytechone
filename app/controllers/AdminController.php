@@ -13,6 +13,12 @@ class AdminController extends Controller
 {
     private $component;
 
+    public function beforeAction()
+    {
+        if (!isset($this->page->session['auth']))
+            header("Location: /admin/");
+    }
+
     public function __construct(Page &$page, $params)
     {
         parent::__construct($page, $params);

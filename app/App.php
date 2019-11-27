@@ -52,6 +52,8 @@ class App
                     $controller = $this->controller;
                     $action = $this->action;
 
+                    if (method_exists($this->controller, 'beforeAction'))
+                        $this->controller->beforeAction();
                     $controller->$action();
 
                     break;
@@ -87,6 +89,9 @@ class App
 
                 if (isset($this->controller) && isset($this->action)) {
                     $action = $this->action;
+
+                    if (method_exists($this->controller, 'beforeAction'))
+                        $this->controller->beforeAction();
                     $this->controller->$action();
                 }
             }
