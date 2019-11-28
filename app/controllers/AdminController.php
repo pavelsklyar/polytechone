@@ -35,6 +35,26 @@ class AdminController extends Controller
         }
     }
 
+    public function edit()
+    {
+        $pageName = $this->params['page'];
+
+        if (isset($pageName)) {
+            $pageName = str_replace('-', '/', $pageName);
+            $view = new View($pageName, $this->page, ['edit' => true]);
+        }
+    }
+
+    public function team()
+    {
+        $view = new View('about/lineup', $this->page, ['edit' => true]);
+    }
+
+    public function requests()
+    {
+        $view = new View('admin/request', $this->page);
+    }
+
     public function auth()
     {
         $email = $this->page->getPost()['email'];

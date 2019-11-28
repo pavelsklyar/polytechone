@@ -22,7 +22,7 @@ class Table implements TableInterface
 
 
     /**
-     * @param $object // Any class which implements Model
+     * @param $object // Any class which extend Model
      * @return bool
      */
     public function insert($object): bool
@@ -67,7 +67,7 @@ class Table implements TableInterface
     }
 
     /**
-     * @param $object // Any class which implements Model
+     * @param $object // Any class which extends Model
      * @param string $condition // Name of condition
      * @param string|number $conditionValue // Value of condition
      * @return bool

@@ -17,3 +17,4 @@ class TeamRequestTable extends Table
         $this->tableName = "team_requests";
     }
 }
+

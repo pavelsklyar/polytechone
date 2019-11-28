@@ -1,3 +1,12 @@
+<?php
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Вход в админ-панель Polytech:ONE";
+
+?>
+
 <div class="admin-auth">
     <div class="admin-auth-content">
         <form action="/admin/auth/" method="POST" class="admin-auth-form">

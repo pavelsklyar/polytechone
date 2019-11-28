@@ -22,4 +22,7 @@ $routing->add('GET', '/about/lineup/', 'common', AboutController::class, 'lineup
 $routing->add('GET', '/about/prospects/', 'common', AboutController::class, 'prospects');
 
 $routing->add('GET', '/admin/', 'admin', AdminController::class, 'index');
+$routing->add('GET', '/admin/edit/{page}', 'admin', AdminController::class, 'edit');
+$routing->add('GET', '/admin/team/', 'admin', AdminController::class, 'team');
+$routing->add('GET', '/admin/requests/', 'admin', AdminController::class, 'requests');
 $routing->add('POST', '/admin/auth/', 'admin', AdminController::class, 'auth');

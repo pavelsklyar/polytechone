@@ -40,7 +40,6 @@ class SiteController extends Controller
     {
         $this->component = new FormsComponent();
 
-        $get = $this->page->getGet();
         $post = $this->page->getPost();
 
         $form = new TeamForm($post['name'], $post['surname'], $post['email'], $post['phone']);
@@ -61,7 +60,6 @@ class SiteController extends Controller
     {
         $this->component = new FormsComponent();
 
-        $get = $this->page->getGet();
         $post = $this->page->getPost();
 
         $form = new SponsorshipForm($post['name'], $post['surname'], $post['company'], $post['email'], $post['phone']);
