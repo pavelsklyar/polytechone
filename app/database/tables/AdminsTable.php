@@ -14,4 +14,11 @@ class AdminsTable extends Table
 
         $this->tableName = "admins";
     }
+
+    public function getPagesList()
+    {
+        $sql = "SELECT DISTINCT `url` FROM `content`";
+
+        return $this->database->getQueryArray($sql);
+    }
 }

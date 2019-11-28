@@ -9,7 +9,7 @@ use Database;
 class Table implements TableInterface
 {
     public $tableName;
-    private $database;
+    public $database;
 
     /**
      * Table constructor.

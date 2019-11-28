@@ -7,6 +7,7 @@ namespace app\controllers;
 use app\base\Controller;
 use app\base\Page;
 use app\base\View;
+use app\components\AdminComponent;
 use app\components\AuthComponent;
 
 class AdminController extends Controller
@@ -28,7 +29,9 @@ class AdminController extends Controller
     public function index()
     {
         if (isset($this->page->session['auth'])) {
-            $view = new View("admin/index", $this->page);
+            $this->component = new AdminComponent();
+            $urls = $this->component->getPagesList();
+            $view = new View("admin/index", $this->page, ['urls' => $urls]);
         }
         else {
             $view = new View("admin/auth", $this->page);
@@ -40,8 +43,13 @@ class AdminController extends Controller
         $pageName = $this->params['page'];
 
         if (isset($pageName)) {
-            $pageName = str_replace('-', '/', $pageName);
-            $view = new View($pageName, $this->page, ['edit' => true]);
+            if ($pageName == 'index') {
+                $view = new View("site/" . $pageName, $this->page, ['edit' => true]);
+            }
+            else {
+                $pageName = str_replace('-', '/', $pageName);
+                $view = new View($pageName, $this->page, ['edit' => true]);
+            }
         }
     }
 
