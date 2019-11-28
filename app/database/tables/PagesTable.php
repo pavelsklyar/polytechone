@@ -1,10 +1,12 @@
 <?php
 
+
 namespace app\database\tables;
+
 
 use app\base\Table;
 
-class AdminsTable extends Table
+class PagesTable extends Table
 {
     public $tableName;
 
@@ -12,6 +14,6 @@ class AdminsTable extends Table
     {
         parent::__construct();
 
-        $this->tableName = "admins";
+        $this->tableName = 'pages';
     }
 }

@@ -30,8 +30,8 @@ class AdminController extends Controller
     {
         if (isset($this->page->session['auth'])) {
             $this->component = new AdminComponent();
-            $urls = $this->component->getPagesList();
-            $view = new View("admin/index", $this->page, ['urls' => $urls]);
+            $sitePages = $this->component->getPagesList();
+            $view = new View("admin/index", $this->page, ['sitePages' => $sitePages]);
         }
         else {
             $view = new View("admin/auth", $this->page);
@@ -42,8 +42,12 @@ class AdminController extends Controller
     {
         $pageName = $this->params['page'];
 
+        $data = explode('-', $pageName);
+        $count = count($data);
+        unset($data);
+
         if (isset($pageName)) {
-            if ($pageName == 'index') {
+            if ($pageName == 'index' || $count < 2) {
                 $view = new View("site/" . $pageName, $this->page, ['edit' => true]);
             }
             else {

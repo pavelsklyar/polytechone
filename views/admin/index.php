@@ -1,46 +1,42 @@
 <?php
 /**
 * @var $page \app\base\Page;
-* @var $urls
+* @var $sitePages;
 */
 
 $page->title = "Страницы сайта - Админ-панель Polytech:ONE";
 
-$i = 0;
-
-$pageUrl = [];
-
-foreach ($urls as $url) {
-    $arr = explode('/', $url['url']);
-    $pageUrl[$i]['url'] = "";
+foreach ($sitePages as &$sitePage) {
+    $arr = explode('/', $sitePage['url']);
+    $sitePage['delimiter_url'] = "";
     $temp = 0;
     foreach ($arr as $item) {
         if ($item == '')
             continue;
         if ($temp)
-            $pageUrl[$i]['url'] .= "-" . $item;
+            $sitePage['delimiter_url'] .= "-" . $item;
         else {
-            $pageUrl[$i]['url'] .= $item;
+            $sitePage['delimiter_url'] .= $item;
             $temp = 1;
         }
     }
-    $i++;
 }
+
 ?>
 
 
 <div class="admin">
     <ul>
-    <?php foreach ($urls as $key => $url) : ?>
-        <?php if ($url['url'] == '/') : ?>
+    <?php for($key = 0; $key < count($sitePages); $key++) : ?>
+        <?php if ($sitePages[$key]['url'] == '/') : ?>
             <li>
-                <a href="/admin/edit/index/"><?= $url['url'] ?></a>
+                <a href="/admin/edit/index/"><?= $sitePages[$key]['title'] ?></a>
             </li>
         <?php else : ?>
         <li>
-            <a href="/admin/edit/<?= $pageUrl[$key]['url'] ?>/"><?= $url['url'] ?></a>
+            <a href="/admin/edit/<?= $sitePages[$key]['delimiter_url'] ?>/"><?= $sitePages[$key]['title'] ?></a>
         </li>
         <?php endif; ?>
-    <?php endforeach; ?>
+    <?php endfor; ?>
     </ul>
 </div>

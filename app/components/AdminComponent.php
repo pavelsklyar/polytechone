@@ -6,13 +6,16 @@ namespace app\components;
 
 use app\base\Component;
 use app\database\tables\AdminsTable;
+use app\database\tables\PagesTable;
 
 class AdminComponent extends Component
 {
+    private $pagesTable;
+
     public function getPagesList()
     {
-        $table = new AdminsTable();
+        $this->pagesTable = new PagesTable();
 
-        return $table->getPagesList();
+        return $this->pagesTable->getAll();
     }
 }
