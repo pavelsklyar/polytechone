@@ -28,7 +28,7 @@ class AdminController extends Controller
     public function index()
     {
         if (isset($this->page->session['auth'])) {
-            $view = new View("about/lineup", $this->page);
+            $view = new View("admin/index", $this->page);
         }
         else {
             $view = new View("admin/auth", $this->page);
@@ -47,12 +47,12 @@ class AdminController extends Controller
 
     public function team()
     {
-        $view = new View('about/lineup', $this->page, ['edit' => true]);
+        $view = new View('admin/team', $this->page, ['edit' => true]);
     }
 
     public function requests()
     {
-        $view = new View('admin/request', $this->page);
+        $view = new View('admin/requests', $this->page);
     }
 
     public function auth()
