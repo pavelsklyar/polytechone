@@ -15,9 +15,11 @@ $path = new \app\base\Path();
     <title><?= $page->getTitle(); ?></title>
 </head>
 <body>
+    <?php if (isset($page->session['auth'])) : ?>
     <div class="admin_menu">
         <?php include $page->getAdminMenu(); ?>
     </div>
+    <?php endif; ?>
 
     <div class="admin_content">
         <?php
