@@ -14,7 +14,7 @@ else
     $data = $sponsor;
 
 ?>
-<div>
+<div class="admin__request">
     <form action="/admin/requests/" class=join-form__select>
         <div class="join-form__selectButton">
             <div class="join-form__submit">
@@ -28,13 +28,13 @@ else
 
     <table>
         <tr>
-            <td>Имя</td>
-            <td>Фамилия</td>
+            <th>Имя</th>
+            <th>Фамилия</th>
             <?php if (isset($table) && $table == 'partner') : ?>
-                <td>Компания</td>
+                <th>Компания</th>
             <?php endif; ?>
-            <td>Email</td>
-            <td>Телефон</td>
+            <th>Email</th>
+            <th>Телефон</th>
         </tr>
         <?php foreach ($data as $item) : ?>
             <tr>

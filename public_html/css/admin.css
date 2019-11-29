@@ -84,53 +84,6 @@
     background-color: #17171f;
 }
 
-.menu__logo:hover {
-    background: none;
-}
-
-.menu__item:hover .submenu {
-    visibility: visible;
-    opacity: 1;
-}
-
-.submenu {
-    visibility: hidden;
-    background-color: #17171f;
-    opacity: 0;
-    display: block;
-    left: 0;
-    z-index: 10;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-}
-
-.submenu li {
-    width: 100%;
-    line-height: 40px;
-}
-
-.spoiler {
-    margin: 30px 0;
-}
-
-.toogleMenu {
-    display: none;
-}
-
-nav li ul {
-    position: absolute;
-    display: none;
-    width: 100%;
-}
-
-nav [type="checkbox"],
-nav label.toggleSubmenu {
-    display: none;
-    width: 100%;
-}
-
 .menu__admin {
     display: flex;
     width: 100%;
@@ -138,6 +91,31 @@ nav label.toggleSubmenu {
 
 .admin__item {
     width: 100%;
+}
+
+.admin__request {
+    width: 100%;
+    padding: 20px;
+}
+
+.admin__request .join-form__select {
+    width: auto;
+}
+
+.admin__request table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.admin__request table th {
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.admin__request table td {
+    border: 2px solid white;
+    padding: 5px;
 }
 
 .admin-auth-content {
