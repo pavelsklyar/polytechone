@@ -99,18 +99,25 @@
     padding: 20px;
 }
 
-.admin__request,
+.admin__request .join-form__submit,
+.admin__team .join-form__submit {
+    width: 20%;
+    left: 0;
+}
+
+.admin__request .join-form__select,
 .admin__team .join-form__select {
     width: auto;
 }
 
-.admin__request,
+.admin__request table,
 .admin__team table {
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 10px;
 }
 
-.admin__request,
+.admin__request table th,
 .admin__team table th {
     line-height: 40px;
     text-align: center;
@@ -118,7 +125,7 @@
     padding: 5px;
 }
 
-.admin__request,
+.admin__request table td,
 .admin__team table td {
     border: 2px solid white;
     padding: 5px;

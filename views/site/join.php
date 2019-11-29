@@ -20,7 +20,7 @@ $page->title = "Присоединитесь к нам - Polytech:ONE";
         <form action="/join/" class=join-form__select>
             <div class="join-form__selectButton">
                 <div class="join-form__submit">
-                    <button type="submit" name="form" value="team">ЧЕЛОВЕК</button>
+                    <button type="submit" name="form" value="team">УЧАСТНИК</button>
                 </div>
                 <div class="join-form__submit">
                     <button type="submit" name="form" value="partner">КОМПАНИЯ</button>

@@ -1960,6 +1960,10 @@ body{
 
 /* ----- JOIN ----- */
 
+button:active {
+    outline: 0;
+}
+
 .join {
     display: flex;
     align-items: center;

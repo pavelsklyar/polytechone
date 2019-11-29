@@ -48,4 +48,7 @@ else
             </tr>
         <?php endforeach; ?>
     </table>
+    <div class="join-form__submit">
+                <button type="submit">Ответить на заявку</button>
+            </div>
 </div>

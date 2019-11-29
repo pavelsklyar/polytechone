@@ -28,4 +28,7 @@ $page->title = "Состав команды - Админ-панель Polytech:O
         </tr>
     <?php endforeach; ?>
 </table>
+<div class="join-form__submit">
+                <button type="submit">ДОБАВИТЬ</button>
+            </div>
 </div>
