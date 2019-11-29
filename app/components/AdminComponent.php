@@ -8,12 +8,14 @@ use app\base\Component;
 use app\database\tables\PagesTable;
 use app\database\tables\SponsorshipRequestTable;
 use app\database\tables\TeamRequestTable;
+use app\database\tables\TeamTable;
 
 class AdminComponent extends Component
 {
     private $pagesTable;
     private $teamRequestTable;
     private $sponsorshipRequestTable;
+    private $teamTable;
 
     public function getPagesList()
     {
@@ -34,5 +36,12 @@ class AdminComponent extends Component
         $this->sponsorshipRequestTable = new SponsorshipRequestTable();
 
         return $this->sponsorshipRequestTable->getAll();
+    }
+
+    public function getTeam()
+    {
+        $this->teamTable = new TeamTable();
+
+        return $this->teamTable->getAll();
     }
 }

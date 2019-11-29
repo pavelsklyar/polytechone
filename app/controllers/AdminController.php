@@ -59,7 +59,10 @@ class AdminController extends Controller
 
     public function team()
     {
-        $view = new View('admin/team', $this->page, ['edit' => true]);
+        $this->component = new AdminComponent();
+        $team = $this->component->getTeam();
+
+        $view = new View('admin/team', $this->page, ['team' => $team]);
     }
 
     public function requests()
