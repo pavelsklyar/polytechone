@@ -93,29 +93,40 @@
     width: 100%;
 }
 
-.admin__request {
+.admin__request,
+.admin__team {
     width: 100%;
     padding: 20px;
 }
 
-.admin__request .join-form__select {
+.admin__request,
+.admin__team .join-form__select {
     width: auto;
 }
 
-.admin__request table {
+.admin__request,
+.admin__team table {
     border-collapse: collapse;
     width: 100%;
 }
 
-.admin__request table th {
+.admin__request,
+.admin__team table th {
     line-height: 40px;
     text-align: center;
     border: 2px solid white;
+    padding: 5px;
 }
 
-.admin__request table td {
+.admin__request,
+.admin__team table td {
     border: 2px solid white;
     padding: 5px;
+}
+
+.edit-icon {
+    width: 20px;
+    height: 20px;
 }
 
 .admin-auth-content {
