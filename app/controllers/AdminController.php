@@ -64,7 +64,13 @@ class AdminController extends Controller
 
     public function requests()
     {
-        $view = new View('admin/requests', $this->page);
+        $get = $this->page->getGet();
+
+        $this->component = new AdminComponent();
+        $team = $this->component->getTeamRequests();
+        $sponsor = $this->component->getSponsorshipRequests();
+
+        $view = new View('admin/requests', $this->page, ['team' => $team, 'sponsor' => $sponsor, 'table' => $get['table']]);
     }
 
     public function auth()
