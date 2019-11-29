@@ -80,6 +80,12 @@
     background-color: #17171f;
 }
 
+.admin ul li:hover {
+    background: url(../images/hover-menu.png);
+    background-size: cover;
+    background-color: #17171f;
+}
+
 .admin__item:hover {
     background: url(../images/hover-menu.png);
     background-size: cover;
