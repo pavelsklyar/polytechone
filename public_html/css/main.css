@@ -42,6 +42,8 @@ a {
 }
 
 body {
+    height: auto;
+    overflow: hidden;
     margin: auto;
     display: flex;
     justify-content: space-around;
