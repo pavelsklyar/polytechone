@@ -14,5 +14,8 @@
         <li class="admin__item <?php if ($path->getPath()[1] === "team") : ?>menu__item-select<?php endif; ?>">
             <a href="/admin/team/">Состав команды</a>
         </li>
+        <li class="admin__item <?php if ($path->getPath()[1] === "admins") : ?>menu__item-select<?php endif; ?>">
+            <a href="/admin/admins/">Администраторы</a>
+        </li>
     </ul>
 </nav>

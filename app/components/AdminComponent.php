@@ -5,6 +5,7 @@ namespace app\components;
 
 
 use app\base\Component;
+use app\database\tables\AdminsTable;
 use app\database\tables\PagesTable;
 use app\database\tables\SponsorshipRequestTable;
 use app\database\tables\TeamRequestTable;
@@ -16,6 +17,7 @@ class AdminComponent extends Component
     private $teamRequestTable;
     private $sponsorshipRequestTable;
     private $teamTable;
+    private $adminsTable;
 
     public function getPagesList()
     {
@@ -43,5 +45,12 @@ class AdminComponent extends Component
         $this->teamTable = new TeamTable();
 
         return $this->teamTable->getAll();
+    }
+
+    public function getAdmins()
+    {
+        $this->adminsTable = new AdminsTable();
+
+        return $this->adminsTable->getAdminsList();
     }
 }
