@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\base\Controller;
 use app\base\Page;
+use app\base\Path;
 use app\base\View;
 use app\components\AdminComponent;
 use app\components\AuthComponent;
@@ -16,8 +17,12 @@ class AdminController extends Controller
 
     public function beforeAction()
     {
+        $path = new Path();
         if (!isset($this->page->session['auth'])) {
-            $view = new View("admin/auth", $this->page);
+            if (count($path->getPath()) == 3)
+                $view = new View("admin/auth", $this->page);
+            else
+                header("Location: /admin/");
         }
     }
 
@@ -74,6 +79,14 @@ class AdminController extends Controller
         $sponsor = $this->component->getSponsorshipRequests();
 
         $view = new View('admin/requests', $this->page, ['team' => $team, 'sponsor' => $sponsor, 'table' => $get['table']]);
+    }
+
+    public function admins()
+    {
+        $this->component = new AdminComponent();
+        $admins = $this->component->getAdmins();
+
+        $view = new View('admin/admins', $this->page, ['admins' => $admins]);
     }
 
     public function auth()
