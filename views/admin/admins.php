@@ -26,8 +26,8 @@ $page->title = "Администраторы - Админ-панель Polytech:
         <?php endforeach; ?>
     </table>
     <div class="join-form__submit">
-        <a href="/admin/admins/add/">
-            <button type="submit">Добавить администратора</button>
-        </a>
+        
+            <button type="submit"><a href="/admin/admins/add/">Добавить администратора</a></button>
+        
     </div>
 </div>
