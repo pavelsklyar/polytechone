@@ -26,4 +26,6 @@ $routing->add('GET', '/admin/edit/{page}/', 'admin', AdminController::class, 'ed
 $routing->add('GET', '/admin/team/', 'admin', AdminController::class, 'team');
 $routing->add('GET', '/admin/requests/', 'admin', AdminController::class, 'requests');
 $routing->add('GET', '/admin/admins/', 'admin', AdminController::class, 'admins');
+$routing->add('GET', '/admin/admins/add/', 'admin', AdminController::class, 'adminsForm');
+$routing->add('POST', '/admin/admins/add/', 'admin', AdminController::class, 'adminsAdd');
 $routing->add('POST', '/admin/auth/', 'admin', AdminController::class, 'auth');

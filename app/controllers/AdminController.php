@@ -10,6 +10,7 @@ use app\base\Path;
 use app\base\View;
 use app\components\AdminComponent;
 use app\components\AuthComponent;
+use app\model\Admin;
 
 class AdminController extends Controller
 {
@@ -87,6 +88,23 @@ class AdminController extends Controller
         $admins = $this->component->getAdmins();
 
         $view = new View('admin/admins', $this->page, ['admins' => $admins]);
+    }
+
+    public function adminsForm()
+    {
+        $this->component = new AdminComponent();
+
+        $view = new View('admin/admins/add', $this->page);
+    }
+
+    public function adminsAdd()
+    {
+        $post = $this->page->getPost();
+
+        $this->component = new AuthComponent();
+        $this->component->reg($post['email'], $post['password'], $post['name'], $post['surname']);
+
+        header("Location: /admin/admins/ ");
     }
 
     public function auth()
