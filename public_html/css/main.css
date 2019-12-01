@@ -185,14 +185,14 @@ p {
     display: none;
 }
 
-nav li ul {
+.nav li ul {
     position: absolute;
     display: none;
     width: 100%;
 }
 
-nav [type="checkbox"],
-nav label.toggleSubmenu {
+.nav [type="checkbox"],
+.nav label.toggleSubmenu {
     display: none;
     width: 100%;
 }
@@ -211,7 +211,7 @@ nav label.toggleSubmenu {
     }
     .toogleMenu {
         display: flex;
-        max-height: 80px;
+        max-height: 60px;
         text-align: center;
     }
     .nav {
@@ -232,11 +232,12 @@ nav label.toggleSubmenu {
         margin-top: -80px;
         padding-top: 80px;
         z-index: -1;
-        overflow-y: scroll;
+        /*overflow-y: scroll;*/
         background: url(../images/hover-m-menu.png);
         background-size: cover;
         background-color: #17171f;
-        height: -webkit-fill-available;
+        /*height: -webkit-fill-available;*/
+        height: 100vh;
         visibility: visible;
         opacity: 1;
         width: 100%;
@@ -253,7 +254,7 @@ nav label.toggleSubmenu {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 80px;
+        height: 60px;
         min-width: 90px;
     }
     .toogleMenu a:first-child {
@@ -286,6 +287,7 @@ nav label.toggleSubmenu {
     }
     .toogleMenu:checked~ul li {
         width: 100%;
+        line-height: 50px;
     }
     .submenu a {
         font-size: 26px;
@@ -309,6 +311,9 @@ nav label.toggleSubmenu {
         height: 100%;
         cursor: pointer;
         display: block;
+    }
+    .menu__item-select {
+        border: none;
     }
 }
 
