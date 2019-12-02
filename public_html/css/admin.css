@@ -351,3 +351,23 @@
 a:hover {
     text-decoration: none;
 }
+
+.team__edit {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.del img {
+    width: 20px;
+    height: 20px;
+}
+
+.del {
+    background-color: transparent;
+    border: none;
+}
+
+.admin__add {
+    width: 100%;
+    text-align: center;
+}

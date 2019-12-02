@@ -14,97 +14,6 @@
 /* ----- FONTS end ----- */
 
 
-/* ----- GENERAL STYLE ----- */
-
-* {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'CenturyGothic-Bold';
-}
-
-h2 {
-    font-size: 26px;
-    letter-spacing: 2px;
-}
-
-a {
-    font-family: 'CenturyGothic-Bold';
-    margin: auto;
-    text-decoration: none;
-    display: block;
-}
-
-body {
-    height: auto;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-}
-
-.body {
-    font-family: 'CenturyGothic';
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #17171f;
-    min-height: 100vh;
-    width: 100%;
-}
-
-main {
-    max-width: 1140px;
-    width: 90%;
-    flex-direction: column;
-    flex: auto;
-}
-
-ul {
-    list-style: none;
-}
-
-nobr {
-    font-family: 'CenturyGothic-Bold';
-}
-
-.headline {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 36px;
-    margin-top: 130px;
-    margin-bottom: 50px;
-    letter-spacing: 5px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 35px;
-}
-
-@media all and (max-width: 866px) {
-    main {
-        width: 100%;
-    }
-    h1 {
-        padding: 0 5%;
-    }
-    p {
-        font-size: 16px;
-        line-height: 24px;
-    }
-}
-
-
-/* ----- GENERAL STYLE end ----- */
-
-
 /* ----- HEADER ----- */
 
 .nav {
@@ -160,6 +69,9 @@ p {
 }
 
 .submenu {
+    position: absolute;
+    display: none;
+    width: 100%;
     visibility: hidden;
     background-color: #17171f;
     opacity: 0;
@@ -183,12 +95,6 @@ p {
 
 .toogleMenu {
     display: none;
-}
-
-.nav li ul {
-    position: absolute;
-    display: none;
-    width: 100%;
 }
 
 .nav [type="checkbox"],
@@ -421,7 +327,6 @@ footer img {
 }
 
 .prospects p {
-    font-size: 18px;
     padding: 55px;
     max-width: 300px;
     line-height: 35px;
@@ -1544,7 +1449,6 @@ body{
 
 @media all and (max-width: 1300px) {
     .text-1Tr {
-        font-size: 0.95em;
         line-height: 35px;
     }
     .photo1Tr {
@@ -1553,13 +1457,10 @@ body{
         max-height: 80%;
     }
     .text4textTr {
-        font-size: 0.95em;
         line-height: 30px;
         margin-left: -450px;
-        height: 150px;
     }
     .columnTr p {
-        font-size: 0.95em;
         line-height: 30px;
     }
     .photo4Tr {
@@ -1576,7 +1477,6 @@ body{
 
 @media all and (max-width: 1150px) {
     .text-1Tr {
-        font-size: 0.875em;
         line-height: 40px;
         width: 100%;
         margin-right: 10px;
@@ -1601,14 +1501,10 @@ body{
     .columnTr {
         margin-right: 20px;
     }
-    .columnTr p {
-        font-size: 0.875em;
-    }
+    .columnTr p {}
     .text4textTr {
-        font-size: 0.875em;
         line-height: 30px;
         margin-left: -370px;
-        height: 170px;
     }
 }
 
@@ -1634,17 +1530,13 @@ body{
 
 @media all and (max-width: 910px) {
     .text4textTr {
-        font-size: 0.75em;
         line-height: 30px;
         margin-left: -330px;
-        height: 150px;
     }
     .text-1Tr {
-        font-size: 0.75em;
         line-height: 35px;
     }
     .columnTr p {
-        font-size: 0.75em;
         line-height: 30px;
     }
 }
@@ -1657,10 +1549,8 @@ body{
 
 @media all and (max-width: 750px) {
     .text4textTr {
-        font-size: 0.7em;
         line-height: 25px;
         margin-left: -270px;
-        height: 160px;
     }
     .columnTr p {
         width: 350px;
@@ -1669,17 +1559,13 @@ body{
 
 @media all and (max-width: 660px) {
     .text4textTr {
-        font-size: 0.7em;
         line-height: 20px;
         margin-left: -250px;
-        height: 130px;
     }
     .text-1Tr {
-        font-size: 0.7em;
         line-height: 25px;
     }
     .columnTr p {
-        font-size: 0.7em;
         line-height: 25px;
         width: 300px;
         padding: 20px;
@@ -1694,12 +1580,6 @@ body{
     .columnTr {
         height: 350px;
     }
-    .text4textTr {
-        font-size: 0.65em;
-        line-height: 15px;
-        margin-left: -200px;
-        height: 125px;
-    }
     .columnTr p {
         width: 250px;
         line-height: 20px;
@@ -1712,12 +1592,6 @@ body{
 @media all and (max-width: 470px) {
     .columnTr {
         height: 350px;
-    }
-    .text4textTr {
-        font-size: 0.5em;
-        line-height: 10px;
-        margin-left: -150px;
-        height: 95px;
     }
     .columnTr p {
         width: 250px;
@@ -2074,5 +1948,105 @@ button:active {
     text-align: center;
 }
 
+@media all and (max-width: 866px) {
+    .join-form__select {
+        width: 80%;
+    }
+    .join-form__form {
+        width: 80%;
+    }
+}
+
 
 /* ----- JOIN end ----- */
+
+
+/* ----- GENERAL STYLE ----- */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'CenturyGothic-Bold';
+}
+
+h2 {
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+a {
+    font-family: 'CenturyGothic-Bold';
+    margin: auto;
+    text-decoration: none;
+    display: block;
+}
+
+body {
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.body {
+    font-family: 'CenturyGothic';
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #17171f;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main {
+    max-width: 1140px;
+    width: 90%;
+    flex-direction: column;
+    flex: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+nobr {
+    font-family: 'CenturyGothic-Bold';
+}
+
+.headline {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 130px;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 35px;
+}
+
+@media all and (max-width: 866px) {
+    main {
+        width: 100%;
+    }
+    h1 {
+        padding: 0 5%;
+    }
+    p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+
+/* ----- GENERAL STYLE end ----- */

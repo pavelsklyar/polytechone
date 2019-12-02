@@ -22,12 +22,15 @@ $page->title = "Администраторы - Админ-панель Polytech:
                 <td><?= $item['surname'] ?></td>
                 <td><?= $item['email'] ?></td>
                 <td>
-                    <a href="/admin/admins/edit/<?= $item['id'] ?>/">
-                        <img class="edit-icon" src="/images/edit.png">
-                    </a>
+                    <div class="team__edit">
+                    <button class="del" type="submit"><a href="/admin/admins/edit/<?= $item['id'] ?>/">
+                        <img class="edit-icon" src="/images/edit.png"></a></button>
+                   
+                    
                     <form action="/admin/admins/delete/" method="post">
-                        <button type="submit" name="id" value="<?= $item['id'] ?>">Удалить</button>
+                        <button class="del" type="submit" name="id" value="<?= $item['id'] ?>"><img src="/images/exit.png"></button>
                     </form>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
