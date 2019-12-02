@@ -13,12 +13,12 @@ interface TableInterface
     public function insert($object) : bool;
 
     /**
-     * @param $object // Any class which implements Model
-     * @param string $condition // Name of condition
-     * @param string|number $conditionValue // Value of condition
+     * @param $whereCondition
+     * @param $whereConditionValue
+     * @param array $conditions - [condition => conditionValue]
      * @return bool
      */
-    public function update($object, $condition, $conditionValue) : bool;
+    public function update($whereCondition, $whereConditionValue, $conditions): bool;
 
     /**
      * @return bool

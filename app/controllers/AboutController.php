@@ -6,10 +6,13 @@ namespace app\controllers;
 
 use app\base\Controller;
 use app\base\Page;
+use app\base\Path;
 use app\base\View;
+use app\components\PageComponent;
 
 class AboutController extends Controller
 {
+    private $pageComponent;
 
     public function __construct(Page &$page, $params)
     {
@@ -18,22 +21,50 @@ class AboutController extends Controller
 
     public function history()
     {
-        $view = new View("about/history", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("about/history", $this->page, ['title' => $title,'content' => $content]);
     }
 
     public function tests()
     {
-        $view = new View("about/tests", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("about/tests", $this->page, ['title' => $title,'content' => $content]);
     }
 
     public function training()
     {
-        $view = new View("about/training", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("about/training", $this->page, ['title' => $title,'content' => $content]);
     }
 
     public function firstrace()
     {
-        $view = new View("about/firstrace", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("about/firstrace", $this->page, ['title' => $title,'content' => $content]);
     }
 
     public function lineup()
@@ -43,6 +74,13 @@ class AboutController extends Controller
 
     public function prospects()
     {
-        $view = new View("about/prospects", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("about/prospects", $this->page, ['title' => $title,'content' => $content]);
     }
 }

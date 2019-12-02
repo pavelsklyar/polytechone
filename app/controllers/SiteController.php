@@ -4,13 +4,16 @@ namespace app\controllers;
 
 use app\base\Controller;
 use app\base\Page;
+use app\base\Path;
 use app\base\View;
 use app\components\FormsComponent;
+use app\components\PageComponent;
 use app\model\SponsorshipForm;
 use app\model\TeamForm;
 
 class SiteController extends Controller
 {
+    private $pageComponent;
     private $component;
     private $model;
 
@@ -21,12 +24,26 @@ class SiteController extends Controller
 
     public function index()
     {
-        $view = new View("site/index", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("site/index", $this->page, ['title' => $title,'content' => $content]);
     }
 
     public function partners()
     {
-        $view = new View("site/partners", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("site/partners", $this->page, ['title' => $title,'content' => $content]);
     }
 
     public function join()
@@ -77,6 +94,13 @@ class SiteController extends Controller
 
     public function contacts()
     {
-        $view = new View("site/contacts", $this->page);
+        $this->pageComponent = new PageComponent();
+        $path = new Path();
+
+        $page = $this->pageComponent->getContent($path->getUrl());
+        $title = $page['title'];
+        $content = $page['content'];
+
+        $view = new View("site/contacts", $this->page, ['title' => $title,'content' => $content]);
     }
 }

@@ -2,6 +2,8 @@
 
 /**
  * @var $page \app\base\Page;
+ * @var $title - заголовок
+ * @var $content - массив с контентом
  */
 
 $page->title = "Настройка и тесты - Polytech:ONE";
@@ -9,17 +11,16 @@ $page->title = "Настройка и тесты - Polytech:ONE";
 ?>
 
 <main class="tests">
-    <h1 class="headline">настройка и тесты</h1>
+    <h1 class="headline"><?= $title ?></h1>
 
     <div class="main-1">
         <div class="text1">
-            Инженеры и механики команды, получая консультацию от своих наставников, вносили изменения в электронный
-            блок управления, настраивая необходимую работу основных систем автомобиля, а также увеличивая его
-            мощность.
+            <?= $content['text1'] ?>
         </div>
         <div class="pht1"><img class="pht" src="/images/tests/Photo with a men.png" alt="Photo with a man"></div>
         <div class="hr"><img src="/images/tests/hr.png">
-            <div class="text2">Помимо большой работы над автомобилем было необходимо настроить и протестировать
+            <div class="text2">
+                <?= $content['text2'] ?>
             </div>
         </div>
     </div>
@@ -27,10 +28,12 @@ $page->title = "Настройка и тесты - Polytech:ONE";
     <div class="part2">
         <img class="pht2" src="/images/tests/Photo with a car .png" alt="Photo with a car">
         <div class="text_box">
-            <div class="text3">Перед тестами на полигоне были настроены все необходимые узлы для удобства и
-                безопастности пилота.</div>
-            <div class="text4">На первом выезде с автомобиля были сняты все показатели и внесены минимальные
-                изменения перед гонкой. </div>
+            <div class="text3">
+                <?= $content['text3'] ?>
+            </div>
+            <div class="text4">
+                <?= $content['text4'] ?>
+            </div>
         </div>
     </div>
 </main>

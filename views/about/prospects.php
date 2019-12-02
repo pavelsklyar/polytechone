@@ -2,6 +2,8 @@
 
 /**
  * @var $page \app\base\Page;
+ * @var $title - заголовок
+ * @var $content - массив с контентом
  */
 
 $page->title = "Перспективы - Polytech:ONE";
@@ -9,14 +11,8 @@ $page->title = "Перспективы - Polytech:ONE";
 ?>
 
 <main class="prospects">
-    <h1 class="headline">перспективы</h1>
+    <h1 class="headline"><?= $title ?></h1>
     <div class="prospects-content">
-        <p>
-            В планах у команды <nobr>Polytech:ONE</nobr> продолжать подготавливать автомобиль к
-            российской серии кольцевых гонок, дорабатывая каждый из его узлов.
-            <br>
-            Покорять новые вершины автоспорта, используя максимум своих возможностей. Её главная цель-это
-            совершенствоваться и идти вперёд!
-        </p>
+        <p><?= $content['text1'] ?></p>
     </div>
 </main>

@@ -10,6 +10,7 @@ use app\database\tables\PagesTable;
 use app\database\tables\SponsorshipRequestTable;
 use app\database\tables\TeamRequestTable;
 use app\database\tables\TeamTable;
+use app\model\Team;
 
 class AdminComponent extends Component
 {
@@ -40,11 +41,69 @@ class AdminComponent extends Component
         return $this->sponsorshipRequestTable->getAll();
     }
 
+    public function addTeam($name, $department, $position, $positionNumber, $file)
+    {
+        $this->teamTable = new TeamTable();
+        $fileComponent = new FileComponent();
+
+        $filename = $fileComponent->addImage($file);
+
+        $team = new Team($name, $department, $position, $positionNumber, $filename);
+
+        if (!$this->teamTable->updatePositionNumber($positionNumber))
+            return null;
+
+        return $this->teamTable->insert($team);
+    }
+
+    public function updateTeam($id, $name, $department, $position, $positionNumber, $file)
+    {
+        $this->teamTable = new TeamTable();
+        $fileComponent = new FileComponent();
+
+        $filename = $fileComponent->addImage($file);
+        if (isset($filename)) {
+            $team = new Team($name, $department, $position, $positionNumber, $filename);
+
+            return $this->teamTable->update('id', $id, [
+                'name' => $name,
+                'department' => $department,
+                'position' => $position,
+                'position_number' => $positionNumber,
+                'photo' => $filename
+            ]);
+        }
+        else {
+            $team = new Team($name, $department, $position, $positionNumber);
+
+            return $this->teamTable->update('id', $id, [
+                'name' => $name,
+                'department' => $department,
+                'position' => $position,
+                'position_number' => $positionNumber
+            ]);
+        }
+    }
+
+    public function deleteTeam($id)
+    {
+        $this->teamTable = new TeamTable();
+
+        return $this->teamTable->deleteByCondition('id', $id);
+    }
+
     public function getTeam()
     {
         $this->teamTable = new TeamTable();
 
         return $this->teamTable->getAll();
+    }
+
+    public function getOneTeam($id)
+    {
+        $this->teamTable = new TeamTable();
+
+        return $this->teamTable->getByCondition('id', $id)[0];
     }
 
     public function getAdmins()

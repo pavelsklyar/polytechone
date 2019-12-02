@@ -69,14 +69,29 @@ class Table implements TableInterface
     }
 
     /**
-     * @param $object // Any class which extends Model
-     * @param string $condition // Name of condition
-     * @param string|number $conditionValue // Value of condition
+     * @param $whereCondition
+     * @param $whereConditionValue
+     * @param array $conditions - [condition => conditionValue]
      * @return bool
      */
-    public function update($object, $condition, $conditionValue): bool
+    public function update($whereCondition, $whereConditionValue, $conditions): bool
     {
-        // TODO: Implement update() method.
+        $sql = "UPDATE `{$this->tableName}` SET ";
+        $flag = 0;
+
+        foreach ($conditions as $condition => $conditionValue) {
+            if ($flag) {
+                $sql .= ", `{$condition}` = '{$conditionValue}' ";
+            }
+            else {
+                $sql .= "`{$condition}` = '{$conditionValue}' ";
+                $flag = 1;
+            }
+        }
+
+        $sql .= "WHERE `{$whereCondition}` = '{$whereConditionValue}'";
+
+        return $this->database->query($sql);
     }
 
     /**
@@ -94,7 +109,9 @@ class Table implements TableInterface
      */
     public function deleteByCondition($condition, $conditionValue): bool
     {
-        // TODO: Implement deleteByCondition() method.
+        $sql = "DELETE FROM `{$this->tableName}` WHERE `{$condition}` = '{$conditionValue}'";
+
+        return $this->database->query($sql);
     }
 
     /**

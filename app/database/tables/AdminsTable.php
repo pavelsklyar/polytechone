@@ -17,7 +17,7 @@ class AdminsTable extends Table
 
     public function getAdminsList()
     {
-        $sql = "SELECT `name`, `surname`, `email` FROM `admins`";
+        $sql = "SELECT `id`, `name`, `surname`, `email` FROM `admins`";
 
         return $this->database->getQueryArray($sql);
     }

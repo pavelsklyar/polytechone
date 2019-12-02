@@ -14,7 +14,6 @@ $page->title = "Состав команды - Админ-панель Polytech:O
         <th>Имя и фамилия</th>
         <th>Отдел</th>
         <th>Должность</th>
-        <th>Фото</th>
         <th>Редактировать</th>
     </tr>
     <?php foreach ($team as $item) : ?>
@@ -23,12 +22,18 @@ $page->title = "Состав команды - Админ-панель Polytech:O
             <td><?= $item['name'] ?></td>
             <td><?= $item['department'] ?></td>
             <td><?= $item['position'] ?></td>
-            <td><?= $item['photo'] ?></td>
-            <td><img class="edit-icon" src="/images/edit.png"></td>
+            <td>
+                <a href="/admin/team/edit/<?= $item['id'] ?>/">
+                    <img class="edit-icon" src="/images/edit.png">
+                </a>
+                <form action="/admin/team/delete/" method="post">
+                    <button type="submit" name="id" value="<?= $item['id'] ?>">Удалить</button>
+                </form>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
 <div class="join-form__submit">
-                <button type="submit">ДОБАВИТЬ</button>
-            </div>
+    <button type="submit"><a href="/admin/team/add/">ДОБАВИТЬ</a></button>
+</div>
 </div>

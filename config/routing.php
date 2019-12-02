@@ -1,6 +1,8 @@
 <?php
 
 use app\controllers\AboutController;
+use app\controllers\admin\AdministratorsController;
+use app\controllers\admin\TeamController;
 use app\controllers\AdminController;
 use app\controllers\SiteController;
 
@@ -21,11 +23,24 @@ $routing->add('GET', '/about/firstrace/', 'common', AboutController::class, 'fir
 $routing->add('GET', '/about/lineup/', 'common', AboutController::class, 'lineup');
 $routing->add('GET', '/about/prospects/', 'common', AboutController::class, 'prospects');
 
+
+/** ADMIN PANEL */
+
 $routing->add('GET', '/admin/', 'admin', AdminController::class, 'index');
-$routing->add('GET', '/admin/edit/{page}/', 'admin', AdminController::class, 'edit');
-$routing->add('GET', '/admin/team/', 'admin', AdminController::class, 'team');
-$routing->add('GET', '/admin/requests/', 'admin', AdminController::class, 'requests');
-$routing->add('GET', '/admin/admins/', 'admin', AdminController::class, 'admins');
-$routing->add('GET', '/admin/admins/add/', 'admin', AdminController::class, 'adminsForm');
-$routing->add('POST', '/admin/admins/add/', 'admin', AdminController::class, 'adminsAdd');
 $routing->add('POST', '/admin/auth/', 'admin', AdminController::class, 'auth');
+$routing->add('GET', '/admin/edit/{page}/', 'admin', AdminController::class, 'edit');
+$routing->add('GET', '/admin/requests/', 'admin', AdminController::class, 'requests');
+
+$routing->add('GET', '/admin/team/', 'admin', TeamController::class, 'index');
+$routing->add('GET', '/admin/team/add/', 'admin', TeamController::class, 'addForm');
+$routing->add('POST', '/admin/team/add/', 'admin', TeamController::class, 'add');
+$routing->add('GET', '/admin/team/edit/{id}/', 'admin', TeamController::class, 'editForm');
+$routing->add('POST', '/admin/team/edit/', 'admin', TeamController::class, 'edit');
+$routing->add('POST', '/admin/team/delete/', 'admin', TeamController::class, 'delete');
+
+$routing->add('GET', '/admin/admins/', 'admin', AdministratorsController::class, 'index');
+$routing->add('GET', '/admin/admins/add/', 'admin', AdministratorsController::class, 'addForm');
+$routing->add('POST', '/admin/admins/add/', 'admin', AdministratorsController::class, 'add');
+$routing->add('GET', '/admin/admins/edit/{id}/', 'admin', AdministratorsController::class, 'editForm');
+$routing->add('POST', '/admin/admins/edit/', 'admin', AdministratorsController::class, 'edit');
+$routing->add('POST', '/admin/admins/delete/', 'admin', AdministratorsController::class, 'delete');

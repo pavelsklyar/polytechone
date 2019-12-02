@@ -10,10 +10,12 @@ use app\base\Path;
 use app\base\View;
 use app\components\AdminComponent;
 use app\components\AuthComponent;
+use app\components\PageComponent;
 use app\model\Admin;
 
 class AdminController extends Controller
 {
+    private $pageComponent;
     private $component;
 
     public function beforeAction()
@@ -44,69 +46,6 @@ class AdminController extends Controller
         }
     }
 
-    public function edit()
-    {
-        $pageName = $this->params['page'];
-
-        $data = explode('-', $pageName);
-        $count = count($data);
-        unset($data);
-
-        if (isset($pageName)) {
-            if ($pageName == 'index' || $count < 2) {
-                $view = new View("site/" . $pageName, $this->page, ['edit' => true]);
-            }
-            else {
-                $pageName = str_replace('-', '/', $pageName);
-                $view = new View($pageName, $this->page, ['edit' => true]);
-            }
-        }
-    }
-
-    public function team()
-    {
-        $this->component = new AdminComponent();
-        $team = $this->component->getTeam();
-
-        $view = new View('admin/team', $this->page, ['team' => $team]);
-    }
-
-    public function requests()
-    {
-        $get = $this->page->getGet();
-
-        $this->component = new AdminComponent();
-        $team = $this->component->getTeamRequests();
-        $sponsor = $this->component->getSponsorshipRequests();
-
-        $view = new View('admin/requests', $this->page, ['team' => $team, 'sponsor' => $sponsor, 'table' => $get['table']]);
-    }
-
-    public function admins()
-    {
-        $this->component = new AdminComponent();
-        $admins = $this->component->getAdmins();
-
-        $view = new View('admin/admins', $this->page, ['admins' => $admins]);
-    }
-
-    public function adminsForm()
-    {
-        $this->component = new AdminComponent();
-
-        $view = new View('admin/admins/add', $this->page);
-    }
-
-    public function adminsAdd()
-    {
-        $post = $this->page->getPost();
-
-        $this->component = new AuthComponent();
-        $this->component->reg($post['email'], $post['password'], $post['name'], $post['surname']);
-
-        header("Location: /admin/admins/ ");
-    }
-
     public function auth()
     {
         $email = $this->page->getPost()['email'];
@@ -118,5 +57,45 @@ class AdminController extends Controller
         }
 
         header("Location: /admin/");
+    }
+
+    public function edit()
+    {
+        $this->pageComponent = new PageComponent();
+        $pageName = $this->params['page'];
+
+        $data = explode('-', $pageName);
+        $count = count($data);
+        unset($data);
+
+        if (isset($pageName)) {
+            if ($pageName == 'index' || $count < 2) {
+                $page = $this->pageComponent->getContent("/");
+                $title = $page['title'];
+                $content = $page['content'];
+
+                $view = new View("site/" . $pageName, $this->page, ['edit' => true, 'title' => $title, 'content' => $content]);
+            }
+            else {
+                $pageName = str_replace('-', '/', $pageName);
+
+                $page = $this->pageComponent->getContent("/" . $pageName . "/");
+                $title = $page['title'];
+                $content = $page['content'];
+
+                $view = new View($pageName, $this->page, ['edit' => true, 'title' => $title, 'content' => $content]);
+            }
+        }
+    }
+
+    public function requests()
+    {
+        $get = $this->page->getGet();
+
+        $this->component = new AdminComponent();
+        $team = $this->component->getTeamRequests();
+        $sponsor = $this->component->getSponsorshipRequests();
+
+        $view = new View('admin/requests', $this->page, ['team' => $team, 'sponsor' => $sponsor, 'table' => $get['table']]);
     }
 }

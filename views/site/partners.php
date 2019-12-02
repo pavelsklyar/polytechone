@@ -2,6 +2,8 @@
 
 /**
  * @var $page \app\base\Page;
+ * @var $title - заголовок
+ * @var $content - массив с контентом
  */
 
 $page->title = "Наши партнёры - Polytech:ONE";
@@ -10,71 +12,37 @@ $page->title = "Наши партнёры - Polytech:ONE";
 
 <div class="partSmoke"><img class="img" src="/images/partners/partSmoke.png"></div>
 <main class="partners">
-    <h1 class="headline">Партнеры</h1>
+    <h1 class="headline"><?= $title ?></h1>
     <!--MP-->
     <div class="mpH1">
-        Мосполитех
+        <?= $content['partner1'] ?>
         <div class="lineMpH1">
             <img src="/images/partners/partHr.png">
         </div>
     </div>
-            <div class="mp">
-                <div class="mpBox">
-                    <div class="mpText1">
-                        Технический университет, основанный в <b>1919</b> году 
-                        подарил нам возможность стать чем-то большим, 
-                        чем просто студентами. Он подарил нам шанс на 
-                        исполнение мечты. В Стенах  одного из старейшего 
-                        университетов страны мы получаем ценные знания от 
-                        наших преподавателей, которые потом помогают  нам на 
-                        практике воплощать идеи в реальность. Наш университет 
-                        дает нам возможность развиваться и идти вперёд. На 
-                        дне открытых дверей, показывая наш автомобиль, 
-                        мы понимаем насколько ценен вклад университета 
-                        в нас. 
-                    </div>
-                    <div class="mpLogo">
-                        <img src="/images/partners/mpLogo.png">
-                    </div>
-                </div>
-                <div class="mpText2">
-                    Абитуриенты заряжаются интересом, выбирая 
-                    различные направления <b>Московского Политеха</b>, 
-                    ведь наша проектная деятельность, связанная в 
-                    автоспортом подразумевает не только обходимость 
-                    в инженерах, но и в дизайнерах, маркетологах и 
-                    многих немаловажных профессиях.  В университете 
-                    мы получаем не просто теорию, а знания, которые 
-                    очень нужны в использовании в сфере наших 
-                    профессий, мы накапливаем опыт для своего 
-                    будущего. Наш гоночный автомобиль-это не только 
-                    наша заслуга, но и всего университета. Мы с 
-                    гордостью носим титул <b>Московского 
-                    Политхнического</b> университета.
-                </div>
+    <div class="mp">
+        <div class="mpBox">
+            <div class="mpText1">
+                <?= $content['text1'] ?>
             </div>
+            <div class="mpLogo">
+                <img src="/images/partners/mpLogo.png">
+            </div>
+        </div>
+        <div class="mpText2">
+            <?= $content['text2'] ?>
+        </div>
+    </div>
     <!--Motul-->
     <div class="mtlFrst">
         <div class="mtlH1">
-            Motul
+            <?= $content['partner2'] ?>
             <div class="lineMtlH1">
                 <img src="/images/partners/partHr.png">
             </div>
         </div>
         <div class="mtlText1">
-            <b>Motul</b> - мировой лидер по разработке и производству
-            смазочных материалов для всевозможных видов техники -
-            начиная от легковых автомобилей и продуктами для гоночных 
-            болидов, заканчивая грузовой техникой и горно-добывающей
-            промышленностью.<br>
-            Компания <b>Motul</b> сотрудничает с нашей командой 
-            с самого ее появления, являясь бессменным генеральным 
-            спонсором, благодаря ее поддержке наша команда смогла 
-            пройти посвящение в автоспорт. На этом непростом пути 
-            компания предоставляла нам не только знаменитое гоночное 
-            масло <b>300V</b> и средства по уходу за автомобилем, но и 
-            экипировку для участников команд, начиная от рабочей формы, 
-            заканчивая брендированной одеждой. 
+            <?= $content['text3'] ?>
         </div>
     </div>
     <div class="mtlScnd">
@@ -83,37 +51,27 @@ $page->title = "Наши партнёры - Polytech:ONE";
         </div>
         <div class="mtlTextBox">
             <div class="mtlText2">
-                <b>Motul</b>-это не просто генеральный спонсор, 
-                это наставник, который дает возможность 
-                развиваться, идти вперед, смотреть на мир 
-                другими глазами-глазами автоспорта! 
+                <?= $content['text4'] ?>
             </div>
             <div class="mtlText3">
-                Мы очень благодарны за поддержку!
+                <?= $content['text5'] ?>
             </div>
         </div>
     </div>    
     <!--JBT-->
     <div class="jbt">
         <div class="jbtH1">
-            JBT
+            <?= $content['partner3'] ?>
             <div class="lineJbtH1">
                 <img src="/images/partners/partHr.png">
             </div>
         </div>
         <div class="jbtTextBox">
             <div class="jbtText1">
-                Хорошие тормоза - залог безопасности. 
-                Именно поэтому мы выбираем <b>JBT Brake System</b>. 
-                Инженеры компании <b>JBT</b> разработали конструкцию 
-                тормозных систем с учетом анализа опыта ведущих 
-                производителей. Сейчас тормозные системы <b>JBT</b>
-                продаются по всему миру.
+                <?= $content['text6'] ?>
             </div>
             <div class="jbtText2">
-                На первом выезде наш автомобиль уверенно 
-                тормозил и пилот чувствовал контроль над 
-                скоростью, что очень важно в автоспорте. 
+                <?= $content['text7'] ?>
             </div>
             <div class="jbtBackImg">
                 <img src="/images/partners/jbtBackImg.png">
@@ -122,7 +80,7 @@ $page->title = "Наши партнёры - Polytech:ONE";
     </div>
     <!--Airline-->
     <div class="airH1">
-        Airline
+        <?= $content['partner4'] ?>
         <div class="lineAirH1">
             <img src="/images/partners/partHr.png">
         </div>
@@ -132,166 +90,100 @@ $page->title = "Наши партнёры - Polytech:ONE";
             <img src="/images/partners/airLogo.png">
         </div>
         <div class="airText">
-            <b>Airline</b> - Российская компания, 
-            занимающаяся разработкой и производством 
-            автомобильного инструмента и аксессуаров, 
-            появившаяся на российском рынке в <b>2004</b> году. 
-            Их инструменты стали для нас незаменимыми 
-            помощниками работе с автомобилем.
+            <?= $content['text8'] ?>
         </div>
     </div>
     <!--Henkel-->
     <div class="henBackImg">
-                <img src="/images/partners/henBack.png">
+        <img src="/images/partners/henBack.png">
+    </div>
+    <div class="henH1">
+        <?= $content['partner5'] ?>
+        <div class="lineHenH1">
+            <img src="/images/partners/partHr.png">
+        </div>
+    </div>
+    <div class="hen">
+        <div class="henText1">
+            <?= $content['text9'] ?>
+        </div>
+        <div class="henBox">
+            <div class="henLogo">
+                <img src="/images/partners/henLogo.png"><!--1-->
             </div>
-            <div class="henH1">
-                Henkel
-                <div class="lineHenH1">
+            <div class="henText2">
+                <?= $content['text10'] ?>
+            </div>
+        </div>
+        <div class="henText3">
+            <?= $content['text11'] ?>
+            <p><?= $content['text12'] ?></p>
+            <p><?= $content['text13'] ?></p>
+        </div>
+    </div>
+    <!--Gates-->
+   <div class="gat_cri">
+        <div class="gat">
+            <div class="gatH1">
+                <?= $content['partner6'] ?>
+                <div class="lineGatH1">
                     <img src="/images/partners/partHr.png">
                 </div>
             </div>
-            <div class="hen">
-                <div class="henText1">
-                    <b>Loctite Teroson</b> - немецкая химическая 
-                    компания, одно из подразделений компании 
-                    Henkel, занимающаяся разработкой и 
-                    производством склеивающих материалов.                    
-                </div>
-                <div class="henBox">
-                    <div class="henLogo">
-                        <img src="/images/partners/henLogo.png"><!--1-->
-                    </div>
-                    <div class="henText2">
-                        В течении первого года 
-                        существования команда 
-                        <b>Polytech:ONE</b> использовала 
-                        склеивающие и смазывающие 
-                        материалы компании <b>Loctite</b> и 
-                        <b>Teroson</b>. На первых тестах и 
-                        выезде компания обеспечила нам 
-                        уверенность в надёжности и 
-                        плотности сборки нашего 
-                        автомобиля
-                    </div>
-                </div>
-                <div class="henText3">
-                        Мы благодарны компании <b>Henkel</b> за 
-                        поддержку и дружбу.
-                        <p>За время долгого сотрудничества, 
-                            наша кпродукции компании в производстве, 
-                            качество, которое предлагает компания 
-                            <b>Loctite Teroson</b>, полностью удовлетворяет 
-                            требованиям не только при строительстве и 
-                            в быту, но и при производстве гоночных 
-                            автомобилей.</p>                        
-                        <p>Спасибо компании <b>Henkel</b> за веру в нас!</p>
-                </div>
-            </div>    
-            <!--Gates-->   
-           <div class="gat_cri">
-                <div class="gat">
-                    <div class="gatH1">
-                        Gates
-                        <div class="lineGatH1">
-                            <img src="/images/partners/partHr.png">
-                        </div>
-                    </div>
-                    <div class="gatText1">
-                        <b>Gates</b>-американская компания по 
-                        производству ремней с многолетней 
-                        историей. Инженеры компании 
-                        разрабатывают ремни не только для 
-                        автомобилей, но и для промышленности. 
-                        Технологии, используемые на 
-                        производстве, позволяют <b>Gates</b> 
-                        поставлять ремни, проверенные многими 
-                        испытаниями.
-                        <p>Компания <b>Gates</b> сыграла большую роль 
-                            в модернизации нашего автомобиля, 
-                            ведь они предоставили не только одну 
-                            их главных составляющих сердца нашего 
-                            болида, но и обеспечили команду рабочими 
-                            комбезами.
-                        </p>
-                    </div>
-                    <div class="gatLogo">
-                        <img src="/images/partners/gatLogo.png">
-                    </div>
-                </div>
-                <!--CRI-->
-                <div class="cri">
-                    <div class="criH1">
-                        ЦРИ
-                        <div class="lineCriH1">
-                            <img src="/images/partners/partHr.png">
-                        </div>
-                    </div> 
-                    <div class="criBox">
-                        <div class="criLogo">
-                            <img src="/images/partners/criLogo.png">
-                        </div>
-                        <div class="criText1">
-                            Центр развития инжиниринга - одно   
-                            из подразделений нашего титульного 
-                            спонсора <b>Московского Политеха</b>. 
-                            Эте только место, где рождаются идеи 
-                            и воплощаются мечты. Это наставники 
-                            команды, подсказывающие и 
-                            поддерживающие в нужный момент. 
-                            Именно в центре развития инжиниринга 
-                            была изготовлена часть комплектующих 
-                            на автомобиль, именно тут инженеры и 
-                            механики нашей команды работали над 
-                            созданием гоночного болида, а 
-                            маркетологи и дизайнеры над его внешней 
-                            оболочкой.  <b>ЦРИ</b>-это значимое место, где 
-                            рождается не просто мечта, а цель быть 
-                            участниками автоспорта.
-                        </div>
-                    </div> 
-                </div>
+            <div class="gatText1">
+                <?= $content['text14'] ?>
+                <p><?= $content['text15'] ?></p>
             </div>
-            <!--FDR-->
-            <div class="fdrH1">
-                FDR
-                <div class="lineFdrH1">
-                    <img src="/images/partners/partHr.png">
-                </div>  
+            <div class="gatLogo">
+                <img src="/images/partners/gatLogo.png">
             </div>
-            <div class="fdr">
-                <div class="fdrText1">
-                    Наставники команды. Это не просто команда, 
-                    это те люди, которые в течении сезона вдохновляли 
-                    нас, поддерживали, передавали свои знания и умения. 
-                    <b>FDR</b> скрывает за собой многолетнюю историю 
-                    вдохновленных автоспортом молодых людей, идущих 
-                    вперёд<br>
-                    Спасибо за то, что верили в нас с самого начала и 
-                    помогали нам расти!
-                </div>
-                <div class="fdrLogo">
-                    <img src="/images/partners/fdrLogo.png">
-                </div>
-            </div>
-            <!--ShonX-->
-            <div class="shonH1">
-                ShonX
-                <div class="lineShonH1">
+        </div>
+        <!--CRI-->
+        <div class="cri">
+            <div class="criH1">
+                <?= $content['partner7'] ?>
+                <div class="lineCriH1">
                     <img src="/images/partners/partHr.png">
                 </div>
             </div>
-            <div class="shon">
-                <div class="shonLogo">
-                    <img src="/images/partners/shonXLogo.png">
+            <div class="criBox">
+                <div class="criLogo">
+                    <img src="/images/partners/criLogo.png">
                 </div>
-                <div class="shonText1">
-                    Большая часть комплектующих на нашем автомобиле, 
-                    связанных с безопасностью пилота, заслуга нашего 
-                    партнера - <b>ShonX Motorsport</b>. Компания является 
-                    лидером российского рынка в области поставок гоночной 
-                    экипировки и запчастей именно для автоспорта. Благодаря 
-                    ей мы были уверены в защищенности и сохранности жизни 
-                    наших пилотов.  
+                <div class="criText1">
+                    <?= $content['text16'] ?>
                 </div>
             </div>
+        </div>
+    </div>
+    <!--FDR-->
+    <div class="fdrH1">
+        <?= $content['partner8'] ?>
+        <div class="lineFdrH1">
+            <img src="/images/partners/partHr.png">
+        </div>
+    </div>
+    <div class="fdr">
+        <div class="fdrText1">
+            <?= $content['text17'] ?>
+        </div>
+        <div class="fdrLogo">
+            <img src="/images/partners/fdrLogo.png">
+        </div>
+    </div>
+    <!--ShonX-->
+    <div class="shonH1">
+        <?= $content['partner9'] ?>
+        <div class="lineShonH1">
+            <img src="/images/partners/partHr.png">
+        </div>
+    </div>
+    <div class="shon">
+        <div class="shonLogo">
+            <img src="/images/partners/shonXLogo.png">
+        </div>
+        <div class="shonText1">
+            <?= $content['text18'] ?>
+        </div>
+    </div>
 </main>

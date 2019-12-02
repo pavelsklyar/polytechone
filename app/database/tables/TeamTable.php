@@ -16,4 +16,18 @@ class TeamTable extends Table
 
         $this->tableName = 'team';
     }
+
+    public function updatePositionNumber($positionNumber)
+    {
+        $sql = "
+            UPDATE
+                `{$this->tableName}`
+            SET
+                `position_number` = `position_number` + 1
+            WHERE
+                `position_number` >= '{$positionNumber}'
+        ";
+
+        return $this->database->query($sql);
+    }
 }

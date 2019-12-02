@@ -53,6 +53,7 @@ class Page
      */
     private $get;
     private $post;
+    private $files;
 
     /**
      * @var $session - для работы с сессией
@@ -80,6 +81,8 @@ class Page
             $this->get = Security::protectData($_GET);
         if (!empty($_POST))
             $this->post = Security::protectData($_POST);
+        if (!empty($_FILES))
+            $this->files = $_FILES;
 
         $this->session = &$_SESSION;
     }
@@ -255,5 +258,13 @@ class Page
     public function setPost($post)
     {
         $this->post = $post;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFiles()
+    {
+        return $this->files;
     }
 }
